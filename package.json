@@ -1,0 +1,23 @@
+{
+  "name": "kucharka",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miraZz99/Kucharka.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/miraZz99/Kucharka/issues"
+  },
+  "homepage": "https://github.com/miraZz99/Kucharka#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
