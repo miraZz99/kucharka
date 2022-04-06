@@ -1,23 +1,19 @@
 {
-  "name": "kucharka",
+  "name": "itnetvork_node",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/miraZz99/Kucharka.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js "
   },
   "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/miraZz99/Kucharka/issues"
-  },
-  "homepage": "https://github.com/miraZz99/Kucharka#readme",
-  "devDependencies": {
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "joi": "^17.6.0",
+    "mongoose": "^6.2.8",
     "nodemon": "^2.0.15"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
