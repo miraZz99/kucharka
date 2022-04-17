@@ -1,5 +1,5 @@
 const express = require("express")
-const db = require("./databaze/databaze");
+const db = require("./server/databaze/databaze");
 
 const app = express()
 app.use(express.json());
@@ -13,16 +13,16 @@ app.use(express.json());
   
 
 
-const getRouter = require("./routers/get-routs")
-const postRouter = require("./routers/post-routs")
-const putRouter = require("./routers/put-routs")
-const deleteRouter = require("./routers/delete-routs")
+const getRouter = require("./server/routers/get-routs")
+const postRouter = require("./server/routers/post-routs")
+const putRouter = require("./server/routers/put-routs")
+const deleteRouter = require("./server/routers/delete-routs")
 
 
 app.use(getRouter)
-// app.use(postRouter)
-// app.use(putRouter)
-// app.use(deleteRouter)
+app.use(postRouter)
+app.use(putRouter)
+app.use(deleteRouter)
 
 
 
