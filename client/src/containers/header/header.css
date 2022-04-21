@@ -32,34 +32,6 @@
   margin-top: 1.5rem;
 }
 
-.cookbook__header-content__button {
-  width: 100%;
-  margin: 2rem 0 1rem;
-
-  display: flex;
-  flex-direction: row;
-}
-
-.cookbook__header-content__button button {
-  flex: 0.3;
-  width: 100%;
-  min-height: 50px;
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 28px;
-  background: #1762A7;
-  border: 2px solid #1762A7;
-  padding: 0 1rem;
-  color: #fff;
-  cursor: pointer;
-  outline: none;
-
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-top-left-radius:5px;
-  border-bottom-left-radius:5px;
-}
 
 .cookbook__header-content__budget {
   width: 100%;

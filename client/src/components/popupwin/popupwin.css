@@ -1,19 +1,179 @@
-.popupwin-content p, b{
-font-family: var(--font-family);
-color: var(--color-text);
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 2rem 6rem ;
-}
-.popupwin-button {
-  width: 100%;
-  margin: 2rem 0 1rem;
-  align-items: center;
 
-  display: flex;
-  flex-direction: row;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
+
+.popupwin-content h2 {
+  color:#1762A7;
+  font-family: 'Poppins';
+}
+
+:root {
+  --input-border: #8b8a8b;
+  --input-focus-h: 245;
+  --input-focus-s: 100%;
+  --input-focus-l: 42%;
+}
+
+.popupwin-content input {
+  width: 100%;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+  border: 2px solid #fff;
+}
+.popupwin-button input[type=button] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #1762A7;
+  color: #fff;
+  background-color: #1762A7;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+}
+
+.popupwin-content input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #1762A7;
+  color: white;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+}
+
+.popupwin-content input[type=file] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #1762A7;
+  color: white;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+}
+
+.popupwin-content input[type=date] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #1762A7;
+  color: white;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+}
+.popupwin-content input[type=submit] {
+
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #1762A7;
+  color: white;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+}
+.popupwin-content input[type=submit]:hover {
+
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: lightblue;
+  color: white;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+}
+.popupwin-content select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #1762A7;
+  color: white;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+  border: 2px solid #fff;
+}
+
+.popupwin-content textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #1762A7;
+  color: white;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+  border: 2px solid #fff;
+  font-family: 'Poppins';
+}
+
+
+
+
+
+
+
+
+
+/* .popupwin-content label {
+  margin-right: 50px;
+  border: 1px solid gray;
+  border-radius: 20px;
+  
+} */
+
+/* .popupwin-content {
+  flex: 1;
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  flex-direction: column;
+
+  margin-right: 5rem;
+
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--color-text);
+  margin-top: 1.5rem;
+} */
+
+.popupwin-content__recipename {
+  padding:2%;
+}
+/* .popupwin-content__recipename label {
+
+  padding: 5%;
+} */
+.popupwin-content__date {
+  padding: 2%;
+}
+/* .popupwin-content__date label {
+  padding: 5%;
+} */
+
+.popupwin-content__photo {
+  padding: 2%;
+}
+
+/* .popupwin-content__photo label {
+  padding: 10%;
+} */
+
+
+
+
+
+
+
 
 .popupwin-button input {
   flex: 0.3;
@@ -23,12 +183,15 @@ padding: 2rem 6rem ;
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
-  background: grey;
-  border: 2px solid grey;
+  background: #1762A7;
+  border: 2px solid #1762A7;
   padding: 0 1rem;
   color: #fff;
   cursor: pointer;
   outline: none;
+  margin: 2rem 0 1rem;
+  display: flex;
+  flex-direction: row;
 
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;

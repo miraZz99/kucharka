@@ -1,4 +1,6 @@
 .cookbook__navbar {
+  position: sticky;
+  top:0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -82,6 +84,13 @@
   border: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+.cookbook__navbar-popupb button {
+  width: 152px;
+  height: 58px;
+  left: 1153px;
+  top: 55px;
 }
 
 
