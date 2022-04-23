@@ -3,16 +3,19 @@ import React from 'react'
 import { Recipes, Header } from './containers';
 import { Navbar} from './components';
 import './App.css';
-import Find from './componenty_A/Find';
+
+
 
 
 const App = () => {
   return (
     <div className="App">
       <div className="color__bg">
-    
+  
       <Recipes />
+      
         <Header />
+   
       </div>
       {/* <Recipes /> */}
     </div>

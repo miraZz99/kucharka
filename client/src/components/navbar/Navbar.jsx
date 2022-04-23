@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import logo from '../../assets/logo.svg'
 import './navbar.css';
-import axios from 'axios'
+
+
+
 
 
 
@@ -29,6 +31,7 @@ const Navbar = (props) => {
   
 
   return (
+   
     <div className="cookbook__navbar"> 
       <div className="cookbook__navbar-links">
         <div className="cookbook__navbar-links_logo">
@@ -37,7 +40,7 @@ const Navbar = (props) => {
         <div className="cookbook__navbar-links_container">
           <p><a href="home">Home</a></p>
           <p><a href="admin">Admin</a></p>
-          <p onClick={props.recipe}>Recipes</p>
+          <p onClick={props.recipe} >Recipes</p>
         </div>
       </div>
       <div className="cookbook__navbar-popupb">
@@ -46,8 +49,8 @@ const Navbar = (props) => {
       <div className="cookbook__navbar-popupw">
       </div>
       <div className="cookbook__navbar-search">
-          <input type="text"></input>
-          <button type="button" onClick={props.search}>Search</button>
+      <input type="text"  name = "name"onChange={(event)=>props.find(event)} value={props.value}></input>
+      <button type="button" onClick={props.search} >Search</button>
         </div>
       <div className="cookbook__navbar-menu">
         {toggleMenu

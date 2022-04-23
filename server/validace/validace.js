@@ -8,10 +8,9 @@ function validateRecipe(recip, allRequired = true) {
     const schema = Joi.object({
         name:              Joi.string().min(3),
         ingrediences:       Joi.array(),
-        preparation:       Joi.number(),
+        preparation:      Joi.string().regex(/^([0-9]{1,2})\:([0-9]{2})$/),
         evaluated:         Joi.number(),
-        difficulty:         Joi.string().valid("easy","medium","hard"),
-        registration_date: Joi.date(),
+        difficulty:         Joi.string().valid("Easy","Medium","Hard"),
         author: Joi.string()
     });
 

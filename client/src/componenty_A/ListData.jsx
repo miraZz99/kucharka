@@ -10,7 +10,7 @@ export default function ListData(props){
     return(
         <div className="ol">
         { books.length >0 && books.map((book,index)=> {
-            return <div className="border" key={index}>{book.name}, {}
+            return <div className="border" key={index}>{book.name} {}
           
             </div>
         })}

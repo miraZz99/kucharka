@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import cookbook from '../../assets/Cookbook.svg'
 import './header.css';
 import { Popupwin } from '../../components';
+import Create from '../../componenty_A/Create';
 
 
 
@@ -14,7 +15,8 @@ const Header = () => (
         uuCookbook
         </h1>
       <div className="cookbook__header-content__button">
-        <Popupwin />
+        {/* <Popupwin /> */}
+        <Create/>
       </div>
       <div className="cookbook__header-content__popupwin">
         

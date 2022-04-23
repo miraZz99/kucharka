@@ -15,9 +15,10 @@ router.post('/recipe', cors(), (req, res) => {
     let array = {
         name: req.body.name,
         ingrediences: req.body.ingrediences.split(","),
-        preparation: Number(req.body.preparation),
+        preparation: req.body.preparation,
         evaluated: Number(req.body.evaluated),
         difficulty: req.body.difficulty,
+       
         author: req.body.author,
     }
     const { error } = valid.validateRecipe(array);
@@ -25,9 +26,10 @@ router.post('/recipe', cors(), (req, res) => {
         res.status(400).send(error.details[0].message);
         console.log(error.details[0].message);
     } else {
-        db.Recipe.create(array)
-            .then(result => res.json(result))
-            .catch(err => { res.send("Nepodařilo se uložit recept!") });
+        console.log(array);
+        // db.Recipe.create(array)
+        //     .then(result => res.json(result))
+        //     .catch(err => { res.send("Nepodařilo se uložit recept!") });
     }
 }
 );
