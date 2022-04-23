@@ -1,3 +1,4 @@
+const { string } = require('joi');
 const mongoose = require('mongoose')
 
 const url = 'mongodb+srv://admin:132435Andrej@cluster0.hqfl9.mongodb.net/CookBook?retryWrites=true&w=majority'
@@ -11,21 +12,21 @@ const url = 'mongodb+srv://admin:132435Andrej@cluster0.hqfl9.mongodb.net/CookBoo
 const recipeSchema = new mongoose.Schema({
     name: String,
     ingrediences: [String],
-    preparation: Number, 
+    preparation: String, 
     evaluated: Number,
     difficulty: String,
-    registration_date: Date ,
+   
     author: String,
-    img:
-    {
-        data: Buffer,
-        contentType: String
-    }
-    
-    // dateAdded: {
-    //     type: Date,
-    //     default: Date.now
+    // img:
+    // {
+    //     data: Buffer,
+    //     contentType: String
     // }
+    
+    dateAdded: {
+        type: Date,
+        default: Date.now
+    }
 });
 const Recipe = mongoose.model("recipe", recipeSchema);
 

@@ -5,22 +5,15 @@
 
   text-align: center;
   display: flex;
-  
   flex-wrap:wrap;
-  
   gap: 5px;
   justify-content:flex-start;
   height: 100%;
-
-
-  
-  
 }
 
 
 .border{
 
- 
 padding: 100px 100px;
  margin-left: 10px;
  margin-top: 50px;

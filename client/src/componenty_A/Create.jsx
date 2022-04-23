@@ -24,7 +24,7 @@ export default function Create(props) {
     console.log("Create");
     setInput([values])
     axios.post(`http://localhost:8080/recipe`, values)
-      .then(response => props.addRecipi(response.data))
+      .then(response =>response.data)
       .catch((error) => console.log(error));
   }
   return (
@@ -40,7 +40,7 @@ export default function Create(props) {
       />
       
       
-        {/* <ListData books={input} /> */}
+        
 
     </div>
   )

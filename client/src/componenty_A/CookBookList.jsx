@@ -4,6 +4,7 @@ import ListData from "./ListData";
 
 import Create from "./Create";
 import Navbar from "../components/navbar/Navbar";
+import { Popupwin } from "../components";
 
 
 
@@ -26,17 +27,29 @@ export default function CookBookList(props){
 		setFind( {...find,[event.target.name] :event.target.value})
 	}
 	function fidnPost (){
-        setViev(false)
-        if (create){
+        setResult(true)
+        setRec(false)
+        
 		console.log("ano klika to");
 		axios.post("http://localhost:8080/recipe/find",find)
 		.then(response => setVysledek(response.data))
 		.catch((error) => console.log(error));
-        }
+        
         setCreate(!create)
 	}
+    const [rec, setRec] = useState(false)
+    const [result, setResult] = useState(false)
+
+    const buttnRecipe = () => {
+        setRec(!rec);
+     }
+     const buttonResult = () => {
+        setResult(!result)
+        }
+
     const getRecipe = ()=>{
-        
+        buttnRecipe()
+        setResult(false)
         setFind(false)
         setCreate(false)
             axios.get(`http://localhost:8080/recipe/list`)
@@ -44,20 +57,6 @@ export default function CookBookList(props){
             .catch((error) => console.log(error));
        }
 
-
-       const [view, setViev] = useState(true)
-
-const viewww = ()=>{
-
-    if (view == true){
-        getRecipe()
-}
-setViev(!view)
-
-
-
-}
-   
    function addRecepi(newRecipi){
        setBooks([...books,newRecipi])
    }
@@ -72,7 +71,7 @@ setViev(!view)
     return(
       
         <div className="App" >
-             <Navbar  recipe = {viewww} search ={fidnPost} find={finded} value={find.name}  />
+             <Navbar  recipe = {getRecipe} search ={fidnPost} find={finded} value={find.name} addRecipe={addRecepi} />
         
            {
 }
@@ -84,7 +83,7 @@ setViev(!view)
       
 </div>
 <div >
-              {vysledek?
+              {result?
                   <ListData  books = {vysledek}/>:console.log()
                   }
                 
@@ -96,8 +95,8 @@ setViev(!view)
              <div >
              
            
-              {view?
-                  <ListData  books = {books}/>:console.log("neotevira recept")
+              {rec?
+                  <ListData  books = {books}/>:console.log(rec)
                   }
                 
               </div>

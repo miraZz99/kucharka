@@ -56,15 +56,15 @@ const Popupwin = (props) => {
           <form>
             <p>Difficulty</p>
       
-            <select name = "difficulty" onChange={props.difficulty} >
+            {/* <select name = "difficulty" onChange={props.difficulty} > */}
             
             <input type="text" name = "difficulty" value={props.difficulty}  onChange={props.napln}/>
-            
+{/*             
               <option selected value="Easy" >Easy</option>
               <option value="Medium"  >Medium</option>
-              <option  value="Hard"  >Hard</option>
+              <option  value="Hard"  >Hard</option> */}
              
-            </select>
+            {/* </select> */}
         
         
           </form>
@@ -85,7 +85,7 @@ const Popupwin = (props) => {
           <input type="submit" value = "Create" onClick={props.create} ></input>
           </div>
          <div  className='neco'>
-          <ListData books={props.input} /> 
+          <ListData books={props.input}  /> 
           </div>
           </div>
           </>}

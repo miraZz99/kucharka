@@ -5,32 +5,38 @@ const db = require("../databaze/databaze");
 const fs = require("fs")
 const router = express.Router()
 let path = require('path');
-const cors = require("cors")
+const cors = require("cors");
+const { log } = require("console");
 require('dotenv/config');
 router.use(cors({
     origin: "http://localhost:3000"
 }));
 
 router.post('/recipe', cors(), (req, res) => {
-    let array = {
-        name: req.body.name,
-        ingrediences: req.body.ingrediences.split(","),
-        preparation: req.body.preparation,
-        evaluated: Number(req.body.evaluated),
-        difficulty: req.body.difficulty,
-       
-        author: req.body.author,
-    }
-    const { error } = valid.validateRecipe(array);
-    if (error) {
-        res.status(400).send(error.details[0].message);
-        console.log(error.details[0].message);
-    } else {
-        console.log(array);
-        // db.Recipe.create(array)
-        //     .then(result => res.json(result))
-        //     .catch(err => { res.send("Nepodařilo se uložit recept!") });
-    }
+  console.log(req.body.preparation);
+        let array = {
+            name: req.body.name,
+            ingrediences: req.body.ingrediences.split(","),
+            preparation: req.body.preparation,
+            evaluated: Number(req.body.evaluated),
+            difficulty: req.body.difficulty,
+            author: req.body.author,
+        }
+
+
+        const { error } = valid.validateRecipe(array);
+        if (error) {
+            res.status(400).send(error.details[0].message);
+            console.log(error.details[0].message);
+        } else {
+            console.log(array);
+            db.Recipe.create(array)
+                .then(result => res.send(result))
+                .catch(err => console.log(err))
+        }
+        
+
+    
 }
 );
 router.post("/recipe/find",cors(),(req,res)=>{
