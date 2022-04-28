@@ -8,10 +8,36 @@
   width: 100%;
 
 }
+.add{
 
+  color: #1762A7;
+  margin-top: 70px;
+ margin-left: 20px;
+ 
+
+}
+.delete{
+  color: #1762A7;
+  margin-top: 70px;
+  margin-left: 20px;
+  padding-right: 30px;
+}
 .neco{
 display: flex;
 width: 100%;
+}
+.neco p#raw_materials{
+  width: 70%;
+  margin-right: 10px;
+}
+.neco p#count{
+  
+  margin-right: 10px;
+}
+.neco p#unit{
+ margin-top: 23px;
+ height: 20px;
+  
 }
 .widht{
   width: 20%;

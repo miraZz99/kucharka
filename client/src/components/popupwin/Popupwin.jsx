@@ -84,15 +84,15 @@ console.log("Popupwin"+ingredients);
                   <div className="popupwin-content__photo">
                     {ingredients.map((ingredient, index) => (
                       <div key={index} className='neco' >
-                          <p>
+                          <p id ="raw_materials">
                           <label htmlFor="number-input">Raw_materials</label>
                           <input id="number-input" className="input" type="text" name="raw_materials" value={ingredients.raw_materials} onChange={handleChange(ingredient, index)}  />
                         </p>
-                        <p className='widht'>
+                        <p className='widht' id ="count">
                           <label htmlFor="number-input">Count</label>
                           <input type="number" name="count" value={ingredients.count} onChange={handleChange(ingredient, index)} />
                         </p>
-                    <p>
+                    <p id ="unit">
                     <label htmlFor="number-input">Unit</label>
                         <select className='select' name="unit" value={ingredients.unit} onChange={handleChange(ingredient, index)}>
                     <option ></option>
@@ -101,8 +101,12 @@ console.log("Popupwin"+ingredients);
                    
                   </select>
                   </p>
-                   <button onClick={add }> ADDDDD</button>
-                   <button onClick={remove }> remove</button>
+                  <div className='add'>
+                  <i class="fa-solid fa-plus"  onClick={add }></i>
+                  </div>
+                  <div className='delete'>
+                  <i class="fa-solid fa-trash"onClick={remove }> </i> 
+                   </div>
                       </div>
                   ))}
                     
