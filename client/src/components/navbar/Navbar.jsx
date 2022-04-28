@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import logo from '../../assets/logo.svg'
+import Popupwin from '../popupwin/Popupwin';
 import './navbar.css';
 
 
@@ -14,13 +15,15 @@ import './navbar.css';
 
 
 
-const Menu = () => (
+const Menu = (props) => (
+ 
   <>
   <p><a href="#home">Home</a></p>
   <p><a href="#admin">Admin</a></p>
-  <p><a href="#recipes">Recipes</a></p>
+  <p><a onClick={props.recipe}>Recipes</a></p>
   </>
 )
+
 
 
 
@@ -41,6 +44,8 @@ const Navbar = (props) => {
           <p><a href="home">Home</a></p>
           <p><a href="admin">Admin</a></p>
           <p onClick={props.recipe} >Recipes</p>
+         
+         
         </div>
       </div>
       <div className="cookbook__navbar-popupb">
@@ -49,7 +54,7 @@ const Navbar = (props) => {
       <div className="cookbook__navbar-popupw">
       </div>
       <div className="cookbook__navbar-search">
-      <input type="text"  name = "name"onChange={(event)=>props.find(event)} value={props.value}></input>
+      <input type="text"  name = "name" onChange={(event)=>props.find(event)} value={props.value}></input>
       <button type="button" onClick={props.search} >Search</button>
         </div>
       <div className="cookbook__navbar-menu">
@@ -60,7 +65,7 @@ const Navbar = (props) => {
         {toggleMenu && (
           <div className="cookbook__navbar-menu_container scale-up-center">
             <div className="cookbook__navbar-menu_container-links">
-              <Menu />
+              <Menu recipe = {props.recipe}/>
               
             </div>
           </div>

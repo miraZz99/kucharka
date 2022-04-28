@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios'
 import ListData from "./ListData";
 
+
 import Create from "./Create";
 import Navbar from "../components/navbar/Navbar";
 import { Popupwin } from "../components";
@@ -11,7 +12,9 @@ import { Popupwin } from "../components";
 
 export default function CookBookList(props){
     
-   
+    
+
+
     const [books, setBooks] = useState([])
     const [create,setCreate]=useState(true)
    
@@ -23,18 +26,16 @@ export default function CookBookList(props){
 	
 
 	const finded = (event)=>{
-		console.log("ano klika to");
-		setFind( {...find,[event.target.name] :event.target.value})
+		setFind( {...find,[event.target.name] : event.target.value})
 	}
+
 	function fidnPost (){
         setResult(true)
         setRec(false)
-        
-		console.log("ano klika to");
 		axios.post("http://localhost:8080/recipe/find",find)
 		.then(response => setVysledek(response.data))
 		.catch((error) => console.log(error));
-        
+        setFind( {find,name : ""})
         setCreate(!create)
 	}
     const [rec, setRec] = useState(false)
@@ -66,12 +67,14 @@ export default function CookBookList(props){
    function fin(){
     setFind(true)
    } 
-  
+
+
      
     return(
       
         <div className="App" >
              <Navbar  recipe = {getRecipe} search ={fidnPost} find={finded} value={find.name} addRecipe={addRecepi} />
+             
         
            {
 }
@@ -83,8 +86,8 @@ export default function CookBookList(props){
       
 </div>
 <div >
-              {result?
-                  <ListData  books = {vysledek}/>:console.log()
+              {result&&
+                  <ListData  books = {vysledek}/>
                   }
                 
 </div>
@@ -95,8 +98,8 @@ export default function CookBookList(props){
              <div >
              
            
-              {rec?
-                  <ListData  books = {books}/>:console.log(rec)
+              {rec&&
+                  <ListData  books = {books}/>
                   }
                 
               </div>

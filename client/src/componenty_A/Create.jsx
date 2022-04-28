@@ -7,40 +7,75 @@ import { Popup, Popupwin } from '../components';
 
 export default function Create(props) {
 
+  const[ingredients,setIngredients] = useState([{
+    raw_materials: "",
+  count: "",
+  unit:"",
+}])
+
   const [values, setValues] = useState({
     name: "",
-    ingrediences: "",
+    description: "",
     preparation: "",
-    evaluated: "",
     difficulty: "",
     author: "",
   })
+
+
   const [input, setInput] = useState([])
 
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value })
   }
+ 
+  // const handleChange2 = (event) => {
+    
+  //   // setIngredients([{ ...ingredients, [event.target.name]: event.target.value }])
+  
+  // }
+ 
   const handleFormSubmit = () => {
-    console.log("Create");
+
     setInput([values])
-    axios.post(`http://localhost:8080/recipe`, values)
-      .then(response =>response.data)
+    axios.post(`http://localhost:8080/recipe`, {...values, ingredients})
+      .then(response => response.data)
       .catch((error) => console.log(error));
+    setValues({
+      ...values, name: "",
+      preparation: "",
+      difficulty: "",
+      description: "",
+      author: "",
+
+    })
+    setIngredients([{
+    raw_materials: "",
+    count: "",
+    unit:"",
+  }])
+  console.log("Greate"+ingredients);
   }
   return (
     <div>
-      <Popupwin name={values.name} ingrediences={values.ingrediences}
+      <Popupwin name={values.name} 
+      description ={values.description}
         preparation={values.preparation}
-        evaluated={values.evaluated}
         difficulty={values.difficulty}
         author={values.author}
-        napln={handleChange}
-        create={handleFormSubmit}
-        input ={input}
-      />
-      
-      
+
+        ingredients ={ingredients}
+        setIngredients = {setIngredients}
         
+       
+        napln={handleChange}
+      
+        create={handleFormSubmit}
+        input={input}
+        setInput={setInput}
+      />
+
+
+
 
     </div>
   )

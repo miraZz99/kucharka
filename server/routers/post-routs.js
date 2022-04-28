@@ -13,27 +13,27 @@ router.use(cors({
 }));
 
 router.post('/recipe', cors(), (req, res) => {
-  console.log(req.body.preparation);
+
         let array = {
             name: req.body.name,
-            ingrediences: req.body.ingrediences.split(","),
+            description: req.body.description,
+            ingrediences: req.body.ingredients,
             preparation: req.body.preparation,
-            evaluated: Number(req.body.evaluated),
             difficulty: req.body.difficulty,
             author: req.body.author,
         }
+        console.log(array);
 
-
-        const { error } = valid.validateRecipe(array);
-        if (error) {
-            res.status(400).send(error.details[0].message);
-            console.log(error.details[0].message);
-        } else {
-            console.log(array);
-            db.Recipe.create(array)
-                .then(result => res.send(result))
-                .catch(err => console.log(err))
-        }
+        // const { error } = valid.validateRecipe(array);
+        // if (error) {
+        //     res.status(400).send(error.details[0].message);
+        //     console.log(error.details[0].message);
+        // } else {
+        //     console.log(array);
+        //     // db.Recipe.create(array)
+        //     //     .then(result => res.send(result))
+        //     //     .catch(err => console.log(err))
+        // }
         
 
     

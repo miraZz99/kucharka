@@ -11,17 +11,13 @@ const url = 'mongodb+srv://admin:132435Andrej@cluster0.hqfl9.mongodb.net/CookBoo
 
 const recipeSchema = new mongoose.Schema({
     name: String,
-    ingrediences: [String],
+    description:String,
     preparation: String, 
-    evaluated: Number,
     difficulty: String,
-   
-    author: String,
-    // img:
-    // {
-    //     data: Buffer,
-    //     contentType: String
-    // }
+    author:String,
+    
+    ingrediences: Array,
+    evaluated: Number,
     
     dateAdded: {
         type: Date,

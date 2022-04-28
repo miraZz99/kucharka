@@ -5,18 +5,29 @@
   box-sizing: border-box;
 }
 .zkouska{
-  width: 50%;
+  width: 100%;
+
 }
+
 .neco{
+display: flex;
 width: 100%;
 }
+.widht{
+  width: 20%;
+}
+/* .neco p {
+ 
+width: auto;
+} */
 .popupwin-content h2 {
   color:#1762A7;
   font-family: 'Poppins';
 }
-.Vypis{
-  display:flex;
 
+.select {
+ 
+  width: 200%;
 }
 :root {
   --input-border: #8b8a8b;
@@ -156,21 +167,23 @@ width: 100%;
 } */
 
 .popupwin-content__recipename {
-  padding:2%;
+  padding:0,2%;
 }
 /* .popupwin-content__recipename label {
 
   padding: 5%;
 } */
 .popupwin-content__date {
-  padding: 2%;
+  padding: 0,2%;
 }
 /* .popupwin-content__date label {
   padding: 5%;
 } */
 
 .popupwin-content__photo {
-  padding: 2%;
+  
+  padding: 0,2%;
+
 }
 
 /* .popupwin-content__photo label {
