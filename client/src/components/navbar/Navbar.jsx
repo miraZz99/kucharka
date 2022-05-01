@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import logo from '../../assets/logo.svg'
-import Popupwin from '../popupwin/Popupwin';
+
 import './navbar.css';
 
 
@@ -28,6 +28,8 @@ const Menu = (props) => (
 
 
 const Navbar = (props) => {
+
+  const {recipe}= props
   const [toggleMenu, setToggleMenu] = useState(false);
 
 
@@ -43,7 +45,12 @@ const Navbar = (props) => {
         <div className="cookbook__navbar-links_container">
           <p><a href="home">Home</a></p>
           <p><a href="admin">Admin</a></p>
-          <p onClick={props.recipe} >Recipes</p>
+          <p onClick={recipe} >Recipes</p>
+          
+ 
+          
+     
+          
          
          
         </div>
@@ -65,7 +72,7 @@ const Navbar = (props) => {
         {toggleMenu && (
           <div className="cookbook__navbar-menu_container scale-up-center">
             <div className="cookbook__navbar-menu_container-links">
-              <Menu recipe = {props.recipe}/>
+              <Menu recipe = {recipe}/>
               
             </div>
           </div>

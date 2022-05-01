@@ -5,6 +5,7 @@ import { Popup, Popupwin } from '../components';
 
 
 
+
 export default function Create(props) {
 
   const[ingredients,setIngredients] = useState([{
@@ -28,11 +29,7 @@ export default function Create(props) {
     setValues({ ...values, [event.target.name]: event.target.value })
   }
  
-  // const handleChange2 = (event) => {
-    
-  //   // setIngredients([{ ...ingredients, [event.target.name]: event.target.value }])
   
-  // }
  
   const handleFormSubmit = () => {
 
@@ -53,7 +50,7 @@ export default function Create(props) {
     count: "",
     unit:"",
   }])
-  console.log("Greate"+ingredients);
+ 
   }
   return (
     <div>
@@ -80,5 +77,3 @@ export default function Create(props) {
     </div>
   )
 }
-
-

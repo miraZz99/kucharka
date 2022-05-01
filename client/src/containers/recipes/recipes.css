@@ -1,37 +1,43 @@
 .App {
   text-align: center;
 }
-.ol{
 
-  text-align: center;
-  display: flex;
-  flex-wrap:wrap;
+.ol {
+  
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20%;
+  grid-template-rows: auto;
+  justify-self: center;
+  margin: 10px;
+  margin-left: 17%;
+  
   gap: 5px;
-  justify-content:flex-start;
+
   height: 100%;
 }
 
 
-.border{
+.border {
 
   background-color: #94c4ff;
-width: 200px;
-height: 200px;
-padding-top: 150px;
+  width: 200px;
+  height: 200px;
+  padding-top: 100px;
 
 
 
   border: 1px solid gray;
   border-radius: 20px;
 }
-.border:hover{
 
-background: #bcdce5;
- 
+.border:hover {
+
+  background: #bcdce5;
+
 }
 
 
-.cookbook__recipes-test{
+.cookbook__recipes-test {
 
   flex: 1;
   display: flex;

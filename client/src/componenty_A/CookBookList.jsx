@@ -11,10 +11,6 @@ import { Popupwin } from "../components";
 
 
 export default function CookBookList(props){
-    
-    
-
-
     const [books, setBooks] = useState([])
     const [create,setCreate]=useState(true)
    
@@ -42,11 +38,9 @@ export default function CookBookList(props){
     const [result, setResult] = useState(false)
 
     const buttnRecipe = () => {
-        setRec(!rec);
+       setRec(!rec);
      }
-     const buttonResult = () => {
-        setResult(!result)
-        }
+  
 
     const getRecipe = ()=>{
         buttnRecipe()
@@ -70,11 +64,17 @@ export default function CookBookList(props){
 
 
      
+
+
     return(
       
         <div className="App" >
-             <Navbar  recipe = {getRecipe} search ={fidnPost} find={finded} value={find.name} addRecipe={addRecepi} />
-             
+            
+             <Navbar  recipe = {getRecipe} search ={fidnPost} find={finded} value={find.name} addRecipe={addRecepi}  >
+        
+
+             </Navbar>
+           
         
            {
 }
@@ -87,7 +87,7 @@ export default function CookBookList(props){
 </div>
 <div >
               {result&&
-                  <ListData  books = {vysledek}/>
+                  <ListData  books = {vysledek}  setBooks = {setBooks} addRecepi={addRecepi}/>
                   }
                 
 </div>
@@ -99,7 +99,7 @@ export default function CookBookList(props){
              
            
               {rec&&
-                  <ListData  books = {books}/>
+                  <ListData  books = {books} setBooks = {setBooks}/>
                   }
                 
               </div>

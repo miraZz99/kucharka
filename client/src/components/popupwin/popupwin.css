@@ -68,7 +68,7 @@ width: auto;
   outline: none;
   border: 2px solid #fff;
 }
-.popupwin-button input[type=button] {
+/* .popupwin-button input[type=button] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -78,7 +78,7 @@ width: auto;
   background-color: #1762A7;
   border-radius: 5px 5px 5px 5px;
   outline: none;
-}
+} */
 
 .popupwin-content input[type=text] {
   width: 100%;
@@ -224,20 +224,21 @@ width: auto;
 
 
 .popupwin-button input {
+  
   flex: 0.3;
-  width: 100%;
-  min-height: 50px;
+  /* width: 100%; */
+
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
   background: #1762A7;
   border: 2px solid #1762A7;
-  padding: 0 1rem;
+ 
   color: #fff;
   cursor: pointer;
   outline: none;
-  margin: 2rem 0 1rem;
+
   display: flex;
   flex-direction: row;
 

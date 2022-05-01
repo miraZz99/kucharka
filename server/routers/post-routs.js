@@ -24,16 +24,16 @@ router.post('/recipe', cors(), (req, res) => {
         }
         console.log(array);
 
-        // const { error } = valid.validateRecipe(array);
-        // if (error) {
-        //     res.status(400).send(error.details[0].message);
-        //     console.log(error.details[0].message);
-        // } else {
-        //     console.log(array);
-        //     // db.Recipe.create(array)
-        //     //     .then(result => res.send(result))
-        //     //     .catch(err => console.log(err))
-        // }
+        const { error } = valid.validateRecipe(array);
+        if (error) {
+            res.status(400).send(error.details[0].message);
+            console.log(error.details[0].message);
+        } else {
+            console.log(array);
+            db.Recipe.create(array)
+                .then(result => res.send(result))
+                .catch(err => console.log(err))
+        }
         
 
     
@@ -49,4 +49,20 @@ try {
     res.status(404).send("Bad request"+ error )
 }
 })
+router.post("/recipe/delete",cors(),(req,res)=>{
+
+    let idRecipe = req.body
+    console.log(idRecipe);
+
+
+    try {
+        db.Recipe.findByIdAndDelete(idRecipe)
+        .then (result => res.send(result._id))
+    } catch (error) {
+       
+        res.status(404).send("Bad request"+ error )
+    }
+    })
+
+
 module.exports = router

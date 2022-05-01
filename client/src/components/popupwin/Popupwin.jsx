@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './popupwin.css';
 import { Popup } from '../../components';
-import Image from '../../componenty_A/Image';
+import Image from '../../componenty_A/DeleteRecipe';
 import ListData from '../../componenty_A/ListData';
 
 
@@ -15,6 +15,9 @@ const Popupwin = (props) => {
   const togglePopup = () => {
     setIsOpen(!isOpen);
     props.setInput("")
+    // setIngredients( [{raw_materials: "",
+    // count: "",
+    // unit:""}])
     
   }
 
@@ -42,7 +45,7 @@ const Popupwin = (props) => {
     setIngredients(newIngredients)
     }
 
-console.log("Popupwin"+ingredients);
+
   return (
 
 
