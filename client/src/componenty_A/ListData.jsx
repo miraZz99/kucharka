@@ -2,8 +2,7 @@ import React from "react"
 import '../App.css';
 import DeleteRecipe from "./DeleteRecipe";
 import "./style.css"
-import { useState } from "react";
-import { Popupwin } from "../components";
+
 
 
 export default function ListData(props){

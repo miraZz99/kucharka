@@ -1,9 +1,10 @@
 import React from 'react'
 
-import { Recipes, Header } from './containers';
-import { Navbar} from './components';
+import { Header } from './containers';
+
 import './App.css';
-import Create from './componenty_A/Create';
+
+import CookBookList from './componenty_A/CookBookList';
 
 
 
@@ -13,7 +14,9 @@ const App = () => {
     <div className="App">
       <div className="color__bg">
       
-      <Recipes />
+     <CookBookList/>
+            
+
     
         <Header />
    

@@ -3,9 +3,9 @@ import axios from 'axios'
 import ListData from "./ListData";
 
 
-import Create from "./Create";
+
 import Navbar from "../components/navbar/Navbar";
-import { Popupwin } from "../components";
+
 
 
 
@@ -70,40 +70,27 @@ export default function CookBookList(props){
       
         <div className="App" >
             
-             <Navbar  recipe = {getRecipe} search ={fidnPost} find={finded} value={find.name} addRecipe={addRecepi}  >
-        
-
+             <Navbar  recipe = {getRecipe} search ={fidnPost} find={finded} addRecipe={addRecepi}  >
+            
              </Navbar>
            
-        
-           {
-}
-          <div > 
+     
 
-          <div>
-
-<div>
-      
-</div>
-<div >
               {result&&
                   <ListData  books = {vysledek}  setBooks = {setBooks} addRecepi={addRecepi}/>
                   }
                 
-</div>
-  
+
        
-    </div>
+
       
-             <div >
-             
+       
            
               {rec&&
                   <ListData  books = {books} setBooks = {setBooks}/>
                   }
                 
-              </div>
-           </div>
+  
 
       
 

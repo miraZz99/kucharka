@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import ListData from "./ListData";
-import { Popup, Popupwin } from '../components';
+
+import {  Popupwin } from '../components';
 
 
 
@@ -59,21 +59,15 @@ export default function Create(props) {
         preparation={values.preparation}
         difficulty={values.difficulty}
         author={values.author}
-
         ingredients ={ingredients}
         setIngredients = {setIngredients}
-        
-       
-        napln={handleChange}
-      
+        napln={handleChange}     
         create={handleFormSubmit}
         input={input}
         setInput={setInput}
+        values = {values}
+        setValues ={setValues}
       />
-
-
-
-
     </div>
   )
 }

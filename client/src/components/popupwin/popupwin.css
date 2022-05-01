@@ -194,6 +194,8 @@ width: auto;
 
 .popupwin-content__recipename {
   padding:0,2%;
+  color: black;
+  
 }
 /* .popupwin-content__recipename label {
 
@@ -235,7 +237,7 @@ width: auto;
   background: #1762A7;
   border: 2px solid #1762A7;
  
-  color: #fff;
+  color: white;
   cursor: pointer;
   outline: none;
 

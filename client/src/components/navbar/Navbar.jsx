@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import logo from '../../assets/logo.svg'
-
+import Create  from "../../componenty_A/Create"
 import './navbar.css';
 
 
@@ -43,9 +43,12 @@ const Navbar = (props) => {
          <img src={logo} alt="logo" /> 
         </div>
         <div className="cookbook__navbar-links_container">
+       
           <p><a href="home">Home</a></p>
           <p><a href="admin">Admin</a></p>
           <p onClick={recipe} >Recipes</p>
+   <Create/>
+         
           
  
           
