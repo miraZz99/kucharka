@@ -9,6 +9,7 @@ import CookBookList from './componenty_A/CookBookList';
 
 
 
+
 const App = () => {
   return (
     <div className="App">
@@ -16,8 +17,6 @@ const App = () => {
       
      <CookBookList/>
             
-
-    
         <Header />
    
       </div>

@@ -18,11 +18,6 @@ function writeRecipeId(){
     .then(response =>del(response.data))
     .catch((error) => console.log(error));
 }
-
-
-
-
-
   return (
     <div>
         

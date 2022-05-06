@@ -1,4 +1,4 @@
-const { string } = require('joi');
+const { string, number } = require('joi');
 const mongoose = require('mongoose')
 
 const url = 'mongodb+srv://admin:132435Andrej@cluster0.hqfl9.mongodb.net/CookBook?retryWrites=true&w=majority'
@@ -17,8 +17,11 @@ const recipeSchema = new mongoose.Schema({
     author:String,
     
     ingrediences: Array,
-    evaluated: Number,
-    
+    evaluated: {
+        type : Number,
+        default: 0
+    },
+
     dateAdded: {
         type: Date,
         default: Date.now

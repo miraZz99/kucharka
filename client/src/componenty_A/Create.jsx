@@ -8,6 +8,7 @@ import {  Popupwin } from '../components';
 
 export default function Create(props) {
 
+  const {addRecipe}= props
   const[ingredients,setIngredients] = useState([{
     raw_materials: "",
   count: "",
@@ -19,6 +20,7 @@ export default function Create(props) {
     description: "",
     preparation: "",
     difficulty: "",
+    
     author: "",
   })
 
@@ -35,7 +37,7 @@ export default function Create(props) {
 
     setInput([values])
     axios.post(`http://localhost:8080/recipe`, {...values, ingredients})
-      .then(response => response.data)
+      .then(response => addRecipe(response.data))
       .catch((error) => console.log(error));
     setValues({
       ...values, name: "",
