@@ -14,13 +14,7 @@ router.use(
   })
 );
 
-function avgVaslueEvaluated(evaluated) {
-  let avg = evaluated;
-
-  return avg;
-}
-
-router.post("/recipe", cors(), (req, res) => {
+router.post("/recipe/create", cors(), (req, res) => {
   let array = {
     name: req.body.name,
     description: req.body.description,
@@ -38,7 +32,7 @@ router.post("/recipe", cors(), (req, res) => {
   } else {
     console.log(array);
     db.Recipe.create(array)
-      .then((result) => res.send(result))
+      .then((result) => res.json(result))
       .catch((err) => console.log(err));
   }
 });

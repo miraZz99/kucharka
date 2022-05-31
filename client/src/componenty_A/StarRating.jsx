@@ -6,7 +6,7 @@ import { useEffect } from "react";
 const StarRating = (props) => {
   const { _id } = props;
 
-  const [rating, setRating] = useState(null);
+  // const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
   const [end, setEnd] = useState();
 
@@ -18,7 +18,7 @@ const StarRating = (props) => {
         setEnd(data);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [setEnd]);
 
   function ratingToDb(ratingValue) {
     axios
@@ -49,7 +49,7 @@ const StarRating = (props) => {
             <FaStar
               className="star"
               color={ratingValue <= (hover || end) ? "#ffc107" : "#e4e5e9"}
-              size={23}
+              size={35}
               onMouseEnter={() => setHover(ratingValue)}
               onMouseLeave={() => setHover(null)}
             />

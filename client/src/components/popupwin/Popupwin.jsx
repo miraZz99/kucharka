@@ -137,6 +137,8 @@ const Popupwin = (props) => {
                                 <option></option>
                                 <option value="g">g</option>
                                 <option value="ks">ks</option>
+                                <option value="ml">ml</option>
+                                <option value="lžička">lžička</option>
                               </select>
                             </p>
                             <div className="add">

@@ -34,7 +34,8 @@ export default function CookBookList(props) {
     setRec(!rec);
   };
 
-  const getRecipe = () => {
+  // const getRecipe = () => {
+  useEffect(() => {
     buttnRecipe();
     setResult(false);
     setFind(false);
@@ -43,22 +44,22 @@ export default function CookBookList(props) {
       .get(`http://localhost:8080/recipe/list`)
       .then((response) => setBooks(response.data))
       .catch((error) => console.log(error));
-  };
+  }, []);
 
   function addRecepi(newRecipi) {
     setBooks([...books, newRecipi]);
   }
-  function cre() {
-    setCreate(true);
-  }
-  function fin() {
-    setFind(true);
-  }
+  // function cre() {
+  //   setCreate(true);
+  // }
+  // function fin() {
+  //   setFind(true);
+  // }
 
   return (
     <div className="App">
       <Navbar
-        recipe={getRecipe}
+        // recipe={getRecipe}
         search={fidnPost}
         find={finded}
         addRecipe={addRecepi}

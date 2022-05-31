@@ -19,5 +19,10 @@ router.get("/rating/list/:id", cors(), (req, res) => {
     res.json(result.evaluated);
   });
 });
+router.get("/recipe/list/details/:id", cors(), (req, res) => {
+  const data = db.Recipe.findById(req.params.id).then((result) => {
+    res.json(result);
+  });
+});
 
 module.exports = router;
