@@ -1,29 +1,109 @@
-  .recepty{
-      /* width: auto;
-     height: 100px; */
-  }
+
   .detail {
-  
    padding-left: 85%;
 
   }
   .icon {
-    
     padding-top: 30%;
   }
 
   .rating{
-
     grid-row: 3;
     display: flex;
     justify-content:center;
-    gap: 15px;
-  
+    gap: 20px;
+    padding-top: 8px;
+   
+    align-items:center;
+
+  }
+
+  #rating {
+    grid-row: auto;
+    grid-row: 4;
+    align-self: center;
+
+  }
+   
+  .details {
    
     
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows:  15% 50% auto;
+    height: 600px;
+      
+      
     
   }
+  
  
-  #rating {
-    grid-row: 5;
+  .details #ingrediences{
+   /* background-color: #bedaf3; */
+ grid-column: 2;
+    grid-row-start:  2;
+    grid-row-end: span auto;
+    text-align: start;
+    padding-left: 25%;
+    align-self: center;
+    
   }
+
+  .details #description{
+    
+ padding-top: 10px;
+    grid-row: 3;
+    grid-column-start: 1;
+    grid-column-end: span 2;
+
+  }
+  .details #image{
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: center;
+    align-self: center;
+  }
+.details #name{
+  
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+}
+.details #starRating{
+
+
+
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+  
+}
+
+ .nadpis-surovin{
+  display: grid;
+grid-template-columns: 60%  20% 20px 20px;
+grid-template-rows: auto;
+justify-self: center; 
+  align-items:baseline;
+  align-self: center;
+ }
+
+ .nadpis-surovin #minus {
+   grid-column: 4;
+   
+ }
+ .nadpis-surovin #plus {
+  grid-column: 3;
+margin-right: 5px;
+}
+.nadpis-surovin h4 {
+  grid-column: 2;
+}
+h1 {
+  font-size: 40px;
+}
+ .details #name{
+  grid-column: 1;
+}
+

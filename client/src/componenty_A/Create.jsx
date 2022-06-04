@@ -5,6 +5,7 @@ import { Popupwin } from "../components";
 
 export default function Create(props) {
   const { addRecipe } = props;
+  const [alert, setAlert] = useState(false);
   const [ingredients, setIngredients] = useState([
     {
       raw_materials: "",
@@ -18,7 +19,6 @@ export default function Create(props) {
     description: "",
     preparation: "",
     difficulty: "",
-
     author: "",
   });
 
@@ -43,6 +43,8 @@ export default function Create(props) {
       description: "",
       author: "",
     });
+    setAlert(true);
+
     setIngredients([
       {
         raw_materials: "",
@@ -51,6 +53,7 @@ export default function Create(props) {
       },
     ]);
   };
+
   return (
     <div>
       <Popupwin
@@ -67,6 +70,8 @@ export default function Create(props) {
         setInput={setInput}
         values={values}
         setValues={setValues}
+        alert={alert}
+        setAlert={setAlert}
       />
     </div>
   );

@@ -6,8 +6,9 @@
   top: 0;
   left: 0;
 }
- 
-.box {
+
+
+.box#create {
   position: relative;
   width: 70%;
   margin: 0 auto;

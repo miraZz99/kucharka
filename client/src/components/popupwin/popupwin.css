@@ -25,6 +25,7 @@
 .neco{
 display: flex;
 width: 100%;
+
 }
 .neco p#raw_materials{
   width: 70%;
@@ -248,4 +249,9 @@ width: auto;
   border-bottom-right-radius: 5px;
   border-top-left-radius:5px;
   border-bottom-left-radius:5px;
+}
+
+.alert {
+text-align: center;
+width: 100%;
 }

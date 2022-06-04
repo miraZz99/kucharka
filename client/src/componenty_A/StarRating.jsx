@@ -10,16 +10,6 @@ const StarRating = (props) => {
   const [hover, setHover] = useState(null);
   const [end, setEnd] = useState();
 
-  useEffect(() => {
-    axios
-      .get(`http://localhost:8080/rating/list/${_id}`)
-      .then((response) => {
-        let data = response.data;
-        setEnd(data);
-      })
-      .catch((error) => console.log(error));
-  }, [setEnd]);
-
   function ratingToDb(ratingValue) {
     axios
       .post(`http://localhost:8080/rating`, {
@@ -29,6 +19,16 @@ const StarRating = (props) => {
       .then((response) => setEnd(response.data))
       .catch((error) => console.log(error));
   }
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8080/rating/list/${_id}`)
+      .then((response) => {
+        let data = response.data;
+        setEnd(data);
+      })
+      .catch((error) => console.log(error));
+  }, [setEnd]);
 
   return (
     <div>

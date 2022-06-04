@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import "./popupwin.css";
 import { Popup } from "../../components";
 
-import ListData from "../../componenty_A/ListData";
+import { Alert } from "@mui/material";
 
 const Popupwin = (props) => {
-  const { ingredients, setIngredients, values, setValues } = props;
+  const { ingredients, setIngredients, values, setValues, alert, setAlert } =
+    props;
 
   const [isOpen, setIsOpen] = useState(false);
   const togglePopup = () => {
@@ -20,6 +21,7 @@ const Popupwin = (props) => {
       description: "",
       author: "",
     });
+    setAlert(false);
   };
 
   const remove = () => {
@@ -64,6 +66,7 @@ const Popupwin = (props) => {
       <div className="popupwin-content">
         {isOpen && (
           <Popup
+            alert={alert}
             content={
               <>
                 {/* <h2>Create your recipe</h2> */}
@@ -196,8 +199,9 @@ const Popupwin = (props) => {
                       onClick={props.create}
                     ></input>
                   </div>
-                  <div className="neco">
-                    <ListData books={props.input} />
+
+                  <div className="alert">
+                    {alert && <Alert> Recept byl vytvořen </Alert>}
                   </div>
                 </div>
               </>

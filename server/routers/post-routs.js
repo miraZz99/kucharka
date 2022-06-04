@@ -23,7 +23,7 @@ router.post("/recipe/create", cors(), (req, res) => {
     difficulty: req.body.difficulty,
     author: req.body.author,
   };
-  console.log(array);
+  // console.log(array);
 
   const { error } = valid.validateRecipe(array);
   if (error) {
