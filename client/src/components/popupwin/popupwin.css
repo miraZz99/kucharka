@@ -13,6 +13,7 @@
   color: #1762A7;
   margin-top: 70px;
  margin-left: 20px;
+ padding-bottom: 20px;
  
 
 }
@@ -21,10 +22,15 @@
   margin-top: 70px;
   margin-left: 20px;
   padding-right: 30px;
+  padding-bottom: 20px;
 }
 .neco{
 display: flex;
 width: 100%;
+align-items: flex-end;
+
+
+
 
 }
 .neco p#raw_materials{
@@ -55,6 +61,10 @@ width: auto;
 .select {
  
   width: 200%;
+
+}
+#unit{
+  padding-bottom: 78px;
 }
 :root {
   --input-border: #8b8a8b;
@@ -69,17 +79,7 @@ width: auto;
   outline: none;
   border: 2px solid #fff;
 }
-/* .popupwin-button input[type=button] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  background-color: #1762A7;
-  color: #fff;
-  background-color: #1762A7;
-  border-radius: 5px 5px 5px 5px;
-  outline: none;
-} */
+
 
 .popupwin-content input[type=text] {
   width: 100%;
@@ -146,6 +146,7 @@ width: auto;
   border-radius: 5px 5px 5px 5px;
   outline: none;
   border: 2px solid #fff;
+  
 }
 
 .popupwin-content textarea {
@@ -239,18 +240,22 @@ width: auto;
   border: 2px solid #1762A7;
  
   color: white;
-  cursor: pointer;
-  outline: none;
+  /* cursor: pointer;
+  outline: none; */
 
   display: flex;
   flex-direction: row;
 
-  border-top-right-radius: 5px;
+  /* border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   border-top-left-radius:5px;
-  border-bottom-left-radius:5px;
+  border-bottom-left-radius:5px; */
 }
-
+ .popupwin-button:hover{
+  background: #94c4ff;
+border-radius: 5px;
+padding: 2px;
+ }
 .alert {
 text-align: center;
 width: 100%;

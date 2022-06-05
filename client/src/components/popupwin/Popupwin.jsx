@@ -5,8 +5,15 @@ import { Popup } from "../../components";
 import { Alert } from "@mui/material";
 
 const Popupwin = (props) => {
-  const { ingredients, setIngredients, values, setValues, alert, setAlert } =
-    props;
+  const {
+    ingredients,
+    setIngredients,
+    values,
+    setValues,
+    alert,
+    setAlert,
+    isAdmin,
+  } = props;
 
   const [isOpen, setIsOpen] = useState(false);
   const togglePopup = () => {
@@ -132,7 +139,7 @@ const Popupwin = (props) => {
                             <p id="unit">
                               <label htmlFor="number-input">Unit</label>
                               <select
-                                className="select"
+                                id="select"
                                 name="unit"
                                 value={ingredients.unit}
                                 onChange={handleChange(ingredient, index)}

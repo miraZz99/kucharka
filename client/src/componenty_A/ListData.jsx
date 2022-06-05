@@ -7,7 +7,7 @@ import Details from "./Details";
 import { useState } from "react";
 
 export default function ListData(props) {
-  const { setBooks, books } = props;
+  const { setBooks, books, isAdmin } = props;
 
   return (
     <div className="ol">
@@ -20,20 +20,27 @@ export default function ListData(props) {
               </div>
               <div className="rating">
                 <h1>{book.name}</h1>
-                <div id="delete">
-                  {" "}
-                  <DeleteRecipe
-                    remove={book._id}
-                    books={books}
-                    setBooks={setBooks}
-                  />{" "}
-                </div>
-                <div id="update">
-                  {" "}
-                  <i className="fa-solid fa-pen  fa-lg={value.toString()" fa-xl>
+                {isAdmin && (
+                  <div id="delete">
                     {" "}
-                  </i>
-                </div>
+                    <DeleteRecipe
+                      remove={book._id}
+                      books={books}
+                      setBooks={setBooks}
+                    />{" "}
+                  </div>
+                )}
+                {isAdmin && (
+                  <div id="update">
+                    {" "}
+                    <i
+                      className="fa-solid fa-pen  fa-lg={value.toString()"
+                      fa-xl
+                    >
+                      {" "}
+                    </i>
+                  </div>
+                )}
               </div>
               <div id="rating">
                 {" "}

@@ -10,17 +10,18 @@ const Menu = (props) => (
       <a href="#home">Home</a>
     </p>
     <p>
-      <a href="#admin">Admin</a>
-    </p>
-    <p>
-      <a onClick={props.recipe}>Recipes</a>
+      <a onClick={props.admin}>Admin</a>
     </p>
   </>
 );
 
 const Navbar = (props) => {
-  const { recipe, addRecipe } = props;
+  const { addRecipe, setIsAdmin, isAdmin } = props;
   const [toggleMenu, setToggleMenu] = useState(false);
+
+  function admin() {
+    setIsAdmin(!isAdmin);
+  }
 
   return (
     <div className="cookbook__navbar">
@@ -33,12 +34,11 @@ const Navbar = (props) => {
             <a href="home">Home</a>
           </p>
           <p>
-            <a href="admin">Admin</a>
+            <a onClick={admin}>Admin</a>
           </p>
-          <p onClick={recipe}> Recipes</p>
-          <Create addRecipe={addRecipe} />
         </div>
       </div>
+      <Create addRecipe={addRecipe} isAdmin={isAdmin} />
       <div className="cookbook__navbar-popupb"></div>
       <div className="cookbook__navbar-popupw"></div>
       <div className="cookbook__navbar-search">
@@ -69,7 +69,7 @@ const Navbar = (props) => {
         {toggleMenu && (
           <div className="cookbook__navbar-menu_container scale-up-center">
             <div className="cookbook__navbar-menu_container-links">
-              <Menu recipe={recipe} />
+              <Menu admin={admin} />
             </div>
           </div>
         )}

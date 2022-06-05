@@ -4,7 +4,7 @@ import axios from "axios";
 import { Popupwin } from "../components";
 
 export default function Create(props) {
-  const { addRecipe } = props;
+  const { addRecipe, isAdmin } = props;
   const [alert, setAlert] = useState(false);
   const [ingredients, setIngredients] = useState([
     {
@@ -72,6 +72,7 @@ export default function Create(props) {
         setValues={setValues}
         alert={alert}
         setAlert={setAlert}
+        isAdmin={isAdmin}
       />
     </div>
   );

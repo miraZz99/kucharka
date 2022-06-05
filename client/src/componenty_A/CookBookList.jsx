@@ -7,6 +7,7 @@ import Navbar from "../components/navbar/Navbar";
 export default function CookBookList(props) {
   const [books, setBooks] = useState([]);
   const [create, setCreate] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   const [find, setFind] = useState({
     name: "",
@@ -49,27 +50,27 @@ export default function CookBookList(props) {
   function addRecepi(newRecipi) {
     setBooks([...books, newRecipi]);
   }
-  // function cre() {
-  //   setCreate(true);
-  // }
-  // function fin() {
-  //   setFind(true);
-  // }
 
   return (
     <div className="App">
       <Navbar
-        // recipe={getRecipe}
+        setIsAdmin={setIsAdmin}
+        isAdmin={isAdmin}
         search={fidnPost}
         find={finded}
         addRecipe={addRecepi}
       ></Navbar>
 
       {result && (
-        <ListData books={vysledek} setBooks={setBooks} addRecepi={addRecepi} />
+        <ListData
+          isAdmin={isAdmin}
+          books={vysledek}
+          setBooks={setBooks}
+          addRecepi={addRecepi}
+        />
       )}
 
-      {rec && <ListData books={books} setBooks={setBooks} />}
+      {rec && <ListData isAdmin={isAdmin} books={books} setBooks={setBooks} />}
     </div>
   );
 }
