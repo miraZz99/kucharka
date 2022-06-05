@@ -20,6 +20,9 @@ const Popupwin = (props) => {
     setIsOpen(!isOpen);
     props.setInput("");
     setIngredients(ingredients, [{ raw_materials: "", count: "", unit: "" }]);
+
+    //tadyyy
+
     setValues({
       ...values,
       name: "",

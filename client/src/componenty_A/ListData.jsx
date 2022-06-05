@@ -4,7 +4,6 @@ import DeleteRecipe from "./DeleteRecipe";
 import StarRating from "./StarRating";
 import "./style.css";
 import Details from "./Details";
-import { useState } from "react";
 
 export default function ListData(props) {
   const { setBooks, books, isAdmin } = props;
@@ -16,7 +15,7 @@ export default function ListData(props) {
           return (
             <div className="border" key={index}>
               <div className="detail">
-                <Details ide={book._id} />
+                <Details setBooks={setBooks} ide={book._id} />
               </div>
               <div className="rating">
                 <h1>{book.name}</h1>

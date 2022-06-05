@@ -6,7 +6,7 @@ import StarRating from "./StarRating";
 import { RiH4 } from "react-icons/ri";
 
 export default function Details(props) {
-  const { ide } = props;
+  const { ide, setBooks } = props;
   const [isOpen, setIsOpen] = useState(false);
   const [detail, setDetails] = useState();
   const [serving, setServing] = useState(1);
@@ -19,6 +19,7 @@ export default function Details(props) {
   }, [setDetails]);
   function open() {
     setIsOpen(!isOpen);
+    setServing(1);
   }
   function plus() {
     setServing(serving + 1);
@@ -32,7 +33,7 @@ export default function Details(props) {
       return "porci";
     } else return "porce";
   }
-
+  console.log(isOpen);
   return (
     <div>
       <div className="icon" onClick={open}>
@@ -47,7 +48,7 @@ export default function Details(props) {
                 <div className="details">
                   <div id="starRating">
                     {" "}
-                    <StarRating _id={ide} />{" "}
+                    <StarRating _id={ide} isOpen={isOpen} />{" "}
                   </div>
                   <div id="name">
                     <h1>{detail.name}</h1>

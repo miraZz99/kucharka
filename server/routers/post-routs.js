@@ -23,14 +23,12 @@ router.post("/recipe/create", cors(), (req, res) => {
     difficulty: req.body.difficulty,
     author: req.body.author,
   };
-  // console.log(array);
 
   const { error } = valid.validateRecipe(array);
   if (error) {
     res.status(400).send(error.details[0].message);
     console.log(error.details[0].message);
   } else {
-    console.log(array);
     db.Recipe.create(array)
       .then((result) => res.json(result))
       .catch((err) => console.log(err));
@@ -47,7 +45,6 @@ router.post("/recipe/find", cors(), (req, res) => {
 });
 router.post("/recipe/delete", cors(), (req, res) => {
   let idRecipe = req.body;
-  console.log(idRecipe);
 
   try {
     db.Recipe.findByIdAndDelete(idRecipe).then((result) =>

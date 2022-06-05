@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect } from "react";
 
 const StarRating = (props) => {
-  const { _id } = props;
+  const { _id, isOpen } = props;
 
   // const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
@@ -19,17 +19,20 @@ const StarRating = (props) => {
       .then((response) => setEnd(response.data))
       .catch((error) => console.log(error));
   }
-
-  useEffect(() => {
+  //
+  function getStarRating() {
     axios
       .get(`http://localhost:8080/rating/list/${_id}`)
       .then((response) => {
-        let data = response.data;
-        setEnd(data);
+        setEnd(response.data);
       })
       .catch((error) => console.log(error));
-  }, [setEnd]);
+  }
 
+  useEffect(() => {
+    getStarRating();
+  }, [getStarRating]);
+  //
   return (
     <div>
       {[...Array(5)].map((star, i) => {

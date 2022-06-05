@@ -30,7 +30,7 @@ export default function Create(props) {
 
   const handleFormSubmit = () => {
     setInput([values]);
-    console.log(values);
+
     axios
       .post(`http://localhost:8080/recipe/create`, { ...values, ingredients })
       .then((response) => addRecipe(response.data))
