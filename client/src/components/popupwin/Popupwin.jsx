@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./popupwin.css";
 import { Popup } from "../../components";
+// import "./ErrorForm.js";
 
 import { Alert } from "@mui/material";
 
@@ -14,7 +15,6 @@ const Popupwin = (props) => {
     setAlert,
     isAdmin,
   } = props;
-
   const [isOpen, setIsOpen] = useState(false);
   const togglePopup = () => {
     setIsOpen(!isOpen);
@@ -82,23 +82,20 @@ const Popupwin = (props) => {
                 {/* <h2>Create your recipe</h2> */}
                 <div className="Vypis">
                   <div className="zkouska">
-                    <div className="popupwin-content__recipename">
-                      <form>
-                        <p>
-                          <label htmlFor="name">Recipe name</label>
-                          <input
-                            className="input"
-                            type="text"
-                            id="name"
-                            name="name"
-                            value={props.name}
-                            onChange={props.napln}
-                          />
-                        </p>
-                      </form>
-                    </div>
-                    <div className="popupwin-content__date">
-                      <form>
+                    <form>
+                      <div className="popupwin-content__recipename">
+                        <label htmlFor="name">Recipe name</label>
+                        <input
+                          className="input"
+                          type="text"
+                          id="name"
+                          name="name"
+                          value={props.name}
+                          onChange={props.napln}
+                        />
+                        <p class="error name-error"></p>
+                      </div>
+                      <div className="popupwin-content__date">
                         <p>
                           <label htmlFor="date-input">Preparation</label>
 
@@ -111,67 +108,68 @@ const Popupwin = (props) => {
                             onChange={props.napln}
                           />
                         </p>
-                      </form>
-                    </div>
-                    <div className="recipe">
-                      <div className="popupwin-content__photo">
-                        {ingredients.map((ingredient, index) => (
-                          <div key={index} className="neco">
-                            <p id="raw_materials">
-                              <label htmlFor="number-input">
-                                Raw_materials
-                              </label>
-                              <input
-                                id="number-input"
-                                className="input"
-                                type="text"
-                                name="raw_materials"
-                                value={ingredients.raw_materials}
-                                onChange={handleChange(ingredient, index)}
-                              />
-                            </p>
-                            <p className="widht" id="count">
-                              <label htmlFor="number-input">Count</label>
-                              <input
-                                type="number"
-                                name="count"
-                                value={ingredients.count}
-                                onChange={handleChange(ingredient, index)}
-                              />
-                            </p>
-                            <p id="unit">
-                              <label htmlFor="number-input">Unit</label>
-                              <select
-                                id="select"
-                                name="unit"
-                                value={ingredients.unit}
-                                onChange={handleChange(ingredient, index)}
-                              >
-                                <option></option>
-                                <option value="g">g</option>
-                                <option value="ks">ks</option>
-                                <option value="ml">ml</option>
-                                <option value="lžička">lžička</option>
-                              </select>
-                            </p>
-                            <div className="add">
-                              <i className="fa-solid fa-plus" onClick={add}></i>
+                      </div>
+                      <div className="recipe">
+                        <div className="popupwin-content__photo">
+                          {ingredients.map((ingredient, index) => (
+                            <div key={index} className="neco">
+                              <p id="raw_materials">
+                                <label htmlFor="number-input">
+                                  Raw_materials
+                                </label>
+                                <input
+                                  id="number-input"
+                                  className="input"
+                                  type="text"
+                                  name="raw_materials"
+                                  value={ingredients.raw_materials}
+                                  onChange={handleChange(ingredient, index)}
+                                />
+                              </p>
+                              <p className="widht" id="count">
+                                <label htmlFor="number-input">Count</label>
+                                <input
+                                  type="number"
+                                  name="count"
+                                  value={ingredients.count}
+                                  onChange={handleChange(ingredient, index)}
+                                />
+                              </p>
+                              <p id="unit">
+                                <label htmlFor="number-input">Unit</label>
+                                <select
+                                  id="select"
+                                  name="unit"
+                                  value={ingredients.unit}
+                                  onChange={handleChange(ingredient, index)}
+                                >
+                                  <option></option>
+                                  <option value="g">g</option>
+                                  <option value="ks">ks</option>
+                                  <option value="ml">ml</option>
+                                  <option value="lžička">lžička</option>
+                                </select>
+                              </p>
+                              <div className="add">
+                                <i
+                                  className="fa-solid fa-plus"
+                                  onClick={add}
+                                ></i>
+                              </div>
+                              <div className="delete">
+                                <i
+                                  className="fa-solid fa-trash"
+                                  onClick={remove}
+                                >
+                                  {" "}
+                                </i>
+                              </div>
                             </div>
-                            <div className="delete">
-                              <i className="fa-solid fa-trash" onClick={remove}>
-                                {" "}
-                              </i>
-                            </div>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
+                        <div className="popupwin-content__photo"></div>
+                      </div>
 
-                        <form></form>
-                      </div>
-                      <div className="popupwin-content__photo">
-                        <form></form>
-                      </div>
-                    </div>
-                    <form>
                       <p>Difficulty</p>
 
                       <select
@@ -184,8 +182,7 @@ const Popupwin = (props) => {
                         <option value="Medium">Medium</option>
                         <option value="Hard">Hard</option>
                       </select>
-                    </form>
-                    <form>
+
                       <p>Description of recipe</p>
 
                       <textarea
@@ -193,8 +190,7 @@ const Popupwin = (props) => {
                         value={props.description}
                         onChange={props.napln}
                       ></textarea>
-                    </form>
-                    <form>
+
                       <p>Author</p>
                       <input
                         type="text"
@@ -202,14 +198,14 @@ const Popupwin = (props) => {
                         value={props.author}
                         onChange={props.napln}
                       ></input>
-                    </form>
-                    <input
-                      type="submit"
-                      value="Create"
-                      onClick={props.create}
-                    ></input>
-                  </div>
 
+                      <input
+                        type="submit"
+                        value="Create"
+                        onClick={props.create}
+                      ></input>
+                    </form>
+                  </div>
                   <div className="alert">
                     {alert && <Alert> Recept byl vytvořen </Alert>}
                   </div>
