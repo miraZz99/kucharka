@@ -33,7 +33,7 @@ const Popupwin = (props) => {
     });
     setAlert(false);
   };
-
+  
   const remove = () => {
     const newIngredients = [...ingredients];
     console.log(newIngredients);
@@ -62,6 +62,8 @@ const Popupwin = (props) => {
     });
     setIngredients(newIngredients);
   };
+
+  
 
   return (
     <div className="popupwin">
@@ -92,6 +94,7 @@ const Popupwin = (props) => {
                           name="name"
                           value={props.name}
                           onChange={props.napln}
+                          required
                         />
                         <p class="error name-error"></p>
                       </div>
@@ -106,6 +109,7 @@ const Popupwin = (props) => {
                             name="preparation"
                             value={props.preparation}
                             onChange={props.napln}
+                            required
                           />
                         </p>
                       </div>
@@ -124,6 +128,7 @@ const Popupwin = (props) => {
                                   name="raw_materials"
                                   value={ingredients.raw_materials}
                                   onChange={handleChange(ingredient, index)}
+                                  required
                                 />
                               </p>
                               <p className="widht" id="count">
@@ -133,6 +138,7 @@ const Popupwin = (props) => {
                                   name="count"
                                   value={ingredients.count}
                                   onChange={handleChange(ingredient, index)}
+                                  required
                                 />
                               </p>
                               <p id="unit">
@@ -142,6 +148,7 @@ const Popupwin = (props) => {
                                   name="unit"
                                   value={ingredients.unit}
                                   onChange={handleChange(ingredient, index)}
+                                  required
                                 >
                                   <option></option>
                                   <option value="g">g</option>
@@ -176,6 +183,7 @@ const Popupwin = (props) => {
                         name="difficulty"
                         value={props.difficulty}
                         onChange={props.napln}
+                        required
                       >
                         <option></option>
                         <option value="Easy">Easy</option>
@@ -189,6 +197,7 @@ const Popupwin = (props) => {
                         name="description"
                         value={props.description}
                         onChange={props.napln}
+                        required
                       ></textarea>
 
                       <p>Author</p>
@@ -197,6 +206,7 @@ const Popupwin = (props) => {
                         name="author"
                         value={props.author}
                         onChange={props.napln}
+                        required
                       ></input>
 
                       <input
@@ -207,7 +217,7 @@ const Popupwin = (props) => {
                     </form>
                   </div>
                   <div className="alert">
-                    {alert && <Alert> Recept byl vytvořen </Alert>}
+                    {alert &&<Alert onClose={() => setAlert(false)} severity="success"> Recept byl vytvořen </Alert>}
                   </div>
                 </div>
               </>
