@@ -90,6 +90,7 @@ const Popupwin = (props) => {
                             className="input"
                             type="text"
                             id="name"
+                            placeholder="Zadejte jméno"
                             name="name"
                             value={props.name}
                             onChange={props.napln}
@@ -127,6 +128,7 @@ const Popupwin = (props) => {
                                 id="number-input"
                                 className="input"
                                 type="text"
+                                placeholder="Zadejte ingredience"
                                 name="raw_materials"
                                 value={ingredients.raw_materials}
                                 onChange={handleChange(ingredient, index)}
