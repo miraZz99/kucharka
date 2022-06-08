@@ -46,7 +46,7 @@ const Navbar = (props) => {
           type="text"
           name="name"
           onChange={(event) => props.find(event)}
-          value={props.value}
+          value={props.name}
         ></input>
         <button type="button" onClick={props.search}>
           Search

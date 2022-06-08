@@ -5,8 +5,8 @@ const fs = require("fs");
 const router = express.Router();
 let path = require("path");
 const cors = require("cors");
-const { log } = require("console");
-const { func } = require("joi");
+const { use } = require("express/lib/application");
+const { dirname } = require("path");
 require("dotenv/config");
 router.use(
   cors({
@@ -21,18 +21,20 @@ router.post("/recipe/create", cors(), (req, res) => {
     ingrediences: req.body.ingredients,
     preparation: req.body.preparation,
     difficulty: req.body.difficulty,
+    image: req.body.image,
     author: req.body.author,
   };
+  console.log(array);
 
-  const { error } = valid.validateRecipe(array);
-  if (error) {
-    res.status(400).send(error.details[0].message);
-    console.log(error.details[0].message);
-  } else {
-    db.Recipe.create(array)
-      .then((result) => res.json(result))
-      .catch((err) => console.log(err));
-  }
+  // const { error } = valid.validateRecipe(array);
+  // if (error) {
+  //   res.status(400).send(error.details[0].message);
+  //   console.log(error.details[0].message);
+  // } else {
+  //   db.Recipe.create(array)
+  //     .then((result) => res.json(result))
+  //     .catch((err) => console.log(err));
+  // }
 });
 router.post("/recipe/find", cors(), (req, res) => {
   try {
@@ -76,6 +78,18 @@ router.post("/rating", cors(), (req, res) => {
         res.send("Nepodařilo se uložit recept!");
       });
   });
+});
+router.post("/recipe/create/image", async function (req, res) {
+  try {
+    const pic = {
+      picture: req.body.picture,
+    };
+    console.log(pic);
+    // const topics = await db.Recipe(pic);
+    res.status(201).send(pic.picture);
+  } catch (err) {
+    res.status(401).send("Bad request " + err);
+  }
 });
 
 module.exports = router;

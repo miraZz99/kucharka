@@ -1,6 +1,5 @@
 import React from "react";
-
-import { Header } from "./containers";
+import Image from "./componenty_A/Image";
 
 import "./App.css";
 
@@ -11,10 +10,7 @@ const App = () => {
     <div className="App">
       <div className="color__bg">
         <CookBookList />
-
-        {/* <Header /> */}
       </div>
-      {/* <Recipes /> */}
     </div>
   );
 };

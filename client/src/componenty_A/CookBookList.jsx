@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ListData from "./ListData";
+import Image from "./Image";
 
 import Navbar from "../components/navbar/Navbar";
 
@@ -25,7 +26,7 @@ export default function CookBookList(props) {
       .post("http://localhost:8080/recipe/find", find)
       .then((response) => setVysledek(response.data))
       .catch((error) => console.log(error));
-    setFind({ find, name: "" });
+    setFind({ name: "" });
     setCreate(!create);
   }
   const [rec, setRec] = useState(false);
@@ -35,7 +36,6 @@ export default function CookBookList(props) {
     setRec(!rec);
   };
 
-  // const getRecipe = () => {
   useEffect(() => {
     buttnRecipe();
     setResult(false);
@@ -51,6 +51,8 @@ export default function CookBookList(props) {
     setBooks([...books, newRecipi]);
   }
 
+  // console.log(vysledek);
+
   return (
     <div className="App">
       <Navbar
@@ -58,6 +60,7 @@ export default function CookBookList(props) {
         isAdmin={isAdmin}
         search={fidnPost}
         find={finded}
+        name={find.name}
         addRecipe={addRecepi}
       ></Navbar>
 
@@ -69,6 +72,7 @@ export default function CookBookList(props) {
           addRecepi={addRecepi}
         />
       )}
+      {/* <div>{result ? <h1>ahoj</h1> : <h1>Nic</h1>}</div> */}
 
       {rec && <ListData isAdmin={isAdmin} books={books} setBooks={setBooks} />}
     </div>

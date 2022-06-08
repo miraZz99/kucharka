@@ -33,7 +33,7 @@ export default function Details(props) {
       return "porci";
     } else return "porce";
   }
-  console.log(isOpen);
+
   return (
     <div>
       <div className="icon" onClick={open}>

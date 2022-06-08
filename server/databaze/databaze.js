@@ -14,6 +14,7 @@ const recipeSchema = new mongoose.Schema({
   description: String,
   preparation: String,
   difficulty: String,
+  image: String,
   author: String,
 
   ingrediences: Array,
