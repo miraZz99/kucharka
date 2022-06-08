@@ -12,4 +12,3 @@ let obj = {
   ],
 };
 let zk = obj.indrediences.map((e) => console.log(e.mateial));
-console.log(obj);

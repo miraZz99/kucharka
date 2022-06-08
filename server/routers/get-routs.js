@@ -25,4 +25,10 @@ router.get("/recipe/list/details/:id", cors(), (req, res) => {
   });
 });
 
+router.get("/recipe/update/:id", cors(), (req, res) => {
+  const data = db.Recipe.findById(req.params.id).then((result) => {
+    res.send(result);
+  });
+});
+
 module.exports = router;

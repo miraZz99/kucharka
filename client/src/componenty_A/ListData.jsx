@@ -4,9 +4,10 @@ import DeleteRecipe from "./DeleteRecipe";
 import StarRating from "./StarRating";
 import "./style.css";
 import Details from "./Details";
+import Update from "./Update";
 
 export default function ListData(props) {
-  const { setBooks, books, isAdmin } = props;
+  const { setBooks, books, isAdmin, updateRecepi } = props;
 
   return (
     <div className="ol">
@@ -45,10 +46,9 @@ export default function ListData(props) {
                 )}
                 {isAdmin && (
                   <div id="update">
-                    {" "}
-                    <i className="fa-solid fa-pen  fa-lg={value.toString()">
+                    <Update updateRecepi={updateRecepi} id={book._id}>
                       {" "}
-                    </i>
+                    </Update>
                   </div>
                 )}
               </div>

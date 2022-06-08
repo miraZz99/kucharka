@@ -6,7 +6,7 @@ const db = require("../databaze/databaze");
 router.put("/recipe/:id", (req, res) => {
   const id = req.params.id;
   const recip = db.Recipe.findById(id);
-  console.log(id);
+
   if (!recip) {
     res.status(404).send("Recept nebyl nalezen.");
     return;

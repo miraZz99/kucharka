@@ -51,7 +51,14 @@ export default function CookBookList(props) {
   function addRecepi(newRecipi) {
     setBooks([...books, newRecipi]);
   }
-  console.log(books);
+  function updateRecepi(newUpdateRecipi) {
+    const newBooks = [...books];
+    const foundIndex = newBooks.findIndex((x) => x._id == newUpdateRecipi._id);
+    newBooks[foundIndex] = newUpdateRecipi;
+    console.log(newUpdateRecipi, newBooks);
+    setBooks(newBooks);
+  }
+
   return (
     <div className="App">
       <Navbar
@@ -62,9 +69,10 @@ export default function CookBookList(props) {
         name={find.name}
         addRecipe={addRecepi}
       ></Navbar>
-      {/* <Image></Image> */}
+
       {result && (
         <ListData
+          updateRecepi={updateRecepi}
           isAdmin={isAdmin}
           books={vysledek}
           setBooks={setBooks}
@@ -72,7 +80,14 @@ export default function CookBookList(props) {
         />
       )}
 
-      {rec && <ListData isAdmin={isAdmin} books={books} setBooks={setBooks} />}
+      {rec && (
+        <ListData
+          updateRecepi={updateRecepi}
+          isAdmin={isAdmin}
+          books={books}
+          setBooks={setBooks}
+        />
+      )}
     </div>
   );
 }

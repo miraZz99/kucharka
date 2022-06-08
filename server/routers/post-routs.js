@@ -88,5 +88,37 @@ router.post("/rating", cors(), (req, res) => {
       });
   });
 });
+router.post(
+  "/recipe/update",
+  cors(),
+  upload.single("image"),
+  async (req, res) => {
+    let array = {
+      name: req.body.name,
+      description: req.body.description,
+      ingrediences: JSON.parse(req.body.ingredients),
+      preparation: req.body.preparation,
+      difficulty: req.body.difficulty,
+      author: req.body.author,
+      image: req.file?.filename,
+    };
+
+    const { error } = valid.validateRecipe(array);
+    if (error) {
+      res.status(400).send(error.details[0].message);
+      console.log(error.details[0].message);
+    } else {
+      try {
+        const recepi = await db.Recipe.findById(req.body._id);
+        fs.unlinkSync(path.join(__dirname, `../uploads/${recepi.image}`));
+        db.Recipe.findByIdAndUpdate(req.body._id, array, { new: true })
+          .then((result) => res.json(result))
+          .catch((err) => console.log(err));
+      } catch (error) {
+        res.status(400).send("Recepi delete error");
+      }
+    }
+  }
+);
 
 module.exports = router;
