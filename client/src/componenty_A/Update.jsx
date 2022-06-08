@@ -4,7 +4,6 @@ import React from "react";
 import { useState } from "react";
 import "../components/popupwin/popupwin.css";
 import Image from "./Image";
-import { create } from "@mui/material/styles/createTransitions";
 
 export default function Update(props) {
   const { id, updateRecepi } = props;
@@ -70,7 +69,6 @@ export default function Update(props) {
           alert={alert}
           content={
             <>
-              <h2>Create your recipe</h2>
               <div className="Vypis">
                 <div className="zkouska">
                   <div className="popupwin-content__recipename">

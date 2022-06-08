@@ -12,6 +12,9 @@ const Menu = (props) => (
     <p>
       <a onClick={props.admin}>Admin</a>
     </p>
+    <p>
+      <Create addRecipe={props.addRecipe} isAdmin={props.isAdmin} />
+    </p>
   </>
 );
 
@@ -37,8 +40,9 @@ const Navbar = (props) => {
             <a onClick={admin}>Admin</a>
           </p>
         </div>
+        <Create addRecipe={addRecipe} isAdmin={isAdmin} />
       </div>
-      <Create addRecipe={addRecipe} isAdmin={isAdmin} />
+
       <div className="cookbook__navbar-popupb"></div>
       <div className="cookbook__navbar-popupw"></div>
       <div className="cookbook__navbar-search">
@@ -69,7 +73,7 @@ const Navbar = (props) => {
         {toggleMenu && (
           <div className="cookbook__navbar-menu_container scale-up-center">
             <div className="cookbook__navbar-menu_container-links">
-              <Menu admin={admin} />
+              <Menu admin={admin} addRecipe={addRecipe} isAdmin={isAdmin} />
             </div>
           </div>
         )}
