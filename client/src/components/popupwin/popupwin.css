@@ -1,0 +1,262 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.zkouska{
+  width: 100%;
+
+}
+.add{
+
+  color: #1762A7;
+  margin-top: 70px;
+ margin-left: 20px;
+ padding-bottom: 20px;
+ 
+
+}
+.delete{
+  color: #1762A7;
+  margin-top: 70px;
+  margin-left: 20px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+}
+.neco{
+display: flex;
+width: 100%;
+align-items: flex-end;
+
+
+
+
+}
+.neco p#raw_materials{
+  width: 70%;
+  margin-right: 10px;
+}
+.neco p#count{
+  
+  margin-right: 10px;
+}
+.neco p#unit{
+ margin-top: 23px;
+ height: 20px;
+  
+}
+.widht{
+  width: 20%;
+}
+/* .neco p {
+ 
+width: auto;
+} */
+.popupwin-content h2 {
+  color:#1762A7;
+  font-family: 'Poppins';
+}
+
+.select {
+ 
+  width: 200%;
+
+}
+#unit{
+  padding-bottom: 78px;
+}
+:root {
+  --input-border: #8b8a8b;
+  --input-focus-h: 245;
+  --input-focus-s: 100%;
+  --input-focus-l: 42%;
+}
+
+.popupwin-content input {
+  width: 100%;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+  border: 2px solid #fff;
+}
+
+
+.popupwin-content input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #1762A7;
+  color: white;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+}
+
+.popupwin-content input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #1762A7;
+  color: white;
+  border-radius: 0px 5px 0px 5px;
+  outline: none;
+}
+
+.popupwin-content input[type=time] {
+
+  width: 100%;
+  padding: 12px 20px;
+  margin: 0px 0;
+  box-sizing: border-box;
+  background-color: #1762A7;
+  color: white;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+}
+.popupwin-content input[type=submit] {
+
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #1762A7;
+  color: white;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+}
+.popupwin-content input[type=submit]:hover {
+
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: lightblue;
+  color: white;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+}
+.popupwin-content select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #1762A7;
+  color: white;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+  border: 2px solid #fff;
+  
+}
+
+.popupwin-content textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #1762A7;
+  color: white;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+  border: 2px solid #fff;
+  font-family: 'Poppins';
+}
+
+
+
+
+
+
+
+
+
+/* .popupwin-content label {
+  margin-right: 50px;
+  border: 1px solid gray;
+  border-radius: 20px;
+  
+} */
+
+/* .popupwin-content {
+  flex: 1;
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  flex-direction: column;
+
+  margin-right: 5rem;
+
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--color-text);
+  margin-top: 1.5rem;
+} */
+
+.popupwin-content__recipename {
+  padding:0,2%;
+  color: black;
+  
+}
+/* .popupwin-content__recipename label {
+
+  padding: 5%;
+} */
+.popupwin-content__date {
+  padding: 0,2%;
+}
+/* .popupwin-content__date label {
+  padding: 5%;
+} */
+
+.popupwin-content__photo {
+  
+  padding: 0,2%;
+
+}
+
+/* .popupwin-content__photo label {
+  padding: 10%;
+} */
+
+
+
+
+
+
+
+
+.popupwin-button input {
+  
+  flex: 0.3;
+  /* width: 100%; */
+
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  background: #1762A7;
+  border: 2px solid #1762A7;
+ 
+  color: white;
+  /* cursor: pointer;
+  outline: none; */
+
+  display: flex;
+  flex-direction: row;
+
+  /* border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius:5px;
+  border-bottom-left-radius:5px; */
+}
+ .popupwin-button:hover{
+  background: #94c4ff;
+border-radius: 5px;
+padding: 2px;
+ }
+.alert {
+text-align: center;
+width: 100%;
+}
