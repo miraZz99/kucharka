@@ -12,7 +12,7 @@ mongoose
 const recipeSchema = new mongoose.Schema({
   name: String,
   description: String,
-  preparation: String,
+  preparation: Number,
   difficulty: String,
   author: String,
   image: String,

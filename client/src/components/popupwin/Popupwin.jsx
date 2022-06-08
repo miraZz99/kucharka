@@ -105,8 +105,10 @@ const Popupwin = (props) => {
                           <input
                             className="input"
                             id="time-input"
-                            type="time"
+                            type="number"
+                            min="0"
                             name="preparation"
+                            placeholder="Zadejte dobu příptavy v minutach"
                             value={props.preparation}
                             onChange={props.napln}
                           />

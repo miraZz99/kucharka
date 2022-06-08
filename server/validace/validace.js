@@ -5,7 +5,7 @@ function validateRecipe(recip, allRequired = true) {
   const schema = Joi.object({
     name: Joi.string().min(3),
     description: Joi.string(),
-    preparation: Joi.string().regex(/^([0-9]{1,2})\:([0-9]{2})$/),
+    preparation: Joi.number(),
     difficulty: Joi.string().valid("Easy", "Medium", "Hard"),
     author: Joi.string(),
     ingrediences: Joi.array(),
