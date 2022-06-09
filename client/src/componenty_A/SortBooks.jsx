@@ -58,9 +58,12 @@ const SortBooks = (props) => {
 
   return (
     <div className="sortBooks">
-      <p>Sort by:</p>
       <div id="selection-sort">
-        <Select options={options} onChange={handleChange} />
+        <Select
+          placeholder="Sort By"
+          options={options}
+          onChange={handleChange}
+        />
       </div>
     </div>
   );

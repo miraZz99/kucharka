@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ListData from "./ListData";
-import Image from "./Image";
 import SortBooks from "./SortBooks";
-
 import Navbar from "../components/navbar/Navbar";
 
 export default function CookBookList(props) {

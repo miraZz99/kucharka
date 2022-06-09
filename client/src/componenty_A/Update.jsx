@@ -193,7 +193,7 @@ export default function Update(props) {
                     </form>
                     <input
                       type="submit"
-                      value="Create"
+                      value="Update"
                       onClick={create}
                     ></input>
                   </div>

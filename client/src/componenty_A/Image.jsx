@@ -7,6 +7,7 @@ export default function Image(props) {
   return (
     <div>
       <input
+        required
         type="file"
         name="picture"
         onChange={props.imageChange}

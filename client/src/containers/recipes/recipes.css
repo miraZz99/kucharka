@@ -21,7 +21,7 @@ padding: 10px 0px;
 
 
 .border {
-
+  font-family: var(--font-family);
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 10% 60% auto  ;
@@ -30,7 +30,7 @@ padding: 10px 0px;
   height: 450px;
   justify-self: center;
 margin-bottom: 20px;
-  
+  color:  #1762A7;
   border: 0 solid gray;
   border-radius: 20px;
 }

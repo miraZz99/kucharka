@@ -21,16 +21,16 @@ const Popupwin = (props) => {
   const togglePopup = () => {
     setIsOpen(!isOpen);
     props.setInput("");
-    setIngredients(ingredients, [{ raw_materials: "", count: "", unit: "" }]);
+    // setIngredients(ingredients, [{ raw_materials: "", count: "", unit: "" }]);
 
-    setValues({
-      ...values,
-      name: "",
-      preparation: "",
-      difficulty: "",
-      description: "",
-      author: "",
-    });
+    // setValues({
+    //   ...values,
+    //   name: "",
+    //   preparation: "",
+    //   difficulty: "",
+    //   description: "",
+    //   author: "",
+    // });
     setAlert(false);
   };
 
@@ -85,8 +85,14 @@ const Popupwin = (props) => {
                     <div className="popupwin-content__recipename">
                       <form>
                         <p>
-                          <label htmlFor="name">Recipe name</label>
+                          <label
+                            htmlFor="name-input"
+                            style={{ color: "#1762A7" }}
+                          >
+                            Recipe name
+                          </label>
                           <input
+                            required
                             className="input"
                             type="text"
                             id="name"
@@ -104,6 +110,7 @@ const Popupwin = (props) => {
                           <label htmlFor="date-input">Preparation</label>
 
                           <input
+                            required
                             className="input"
                             id="time-input"
                             type="number"
@@ -125,6 +132,7 @@ const Popupwin = (props) => {
                                 Raw_materials
                               </label>
                               <input
+                                required
                                 id="number-input"
                                 className="input"
                                 type="text"
@@ -137,6 +145,7 @@ const Popupwin = (props) => {
                             <p className="widht" id="count">
                               <label htmlFor="number-input">Count</label>
                               <input
+                                required
                                 type="number"
                                 name="count"
                                 min={0}
@@ -147,6 +156,7 @@ const Popupwin = (props) => {
                             <p id="unit">
                               <label htmlFor="number-input">Unit</label>
                               <select
+                                required
                                 id="select"
                                 name="unit"
                                 value={ingredients.unit}
@@ -180,6 +190,7 @@ const Popupwin = (props) => {
                       <p>Difficulty</p>
 
                       <select
+                        required
                         name="difficulty"
                         value={props.difficulty}
                         onChange={props.napln}
@@ -194,7 +205,9 @@ const Popupwin = (props) => {
                       <p>Description of recipe</p>
 
                       <textarea
+                        required
                         name="description"
+                        placeholder="Popis Receptu"
                         value={props.description}
                         onChange={props.napln}
                       ></textarea>
@@ -202,8 +215,10 @@ const Popupwin = (props) => {
                     <form>
                       <p>Author</p>
                       <input
+                        required
                         type="text"
                         name="author"
+                        placeholder="Autor receptu"
                         value={props.author}
                         onChange={props.napln}
                       ></input>

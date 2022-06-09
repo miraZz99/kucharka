@@ -34,9 +34,9 @@ const Navbar = (props) => {
         </div>
         <div className="cookbook__navbar-links_container">
           <p>
-            <a href="home">Home</a>
+            <a href="home">Recipes</a>
           </p>
-          <p>
+          <p id="admin">
             <a onClick={admin}>Admin</a>
           </p>
         </div>

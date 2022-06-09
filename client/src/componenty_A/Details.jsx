@@ -31,9 +31,9 @@ export default function Details(props) {
   }
 
   function porce(serv) {
-    if (serv > 4) {
-      return "porci";
-    } else return "porce";
+    if (serv > 1) {
+      return "servings";
+    } else return "serving";
   }
 
   return (
@@ -69,7 +69,7 @@ export default function Details(props) {
 
                   <div id="ingrediences">
                     <div className="nadpis-surovin">
-                      <h2>Suroviny</h2>
+                      <h2>Ingredients</h2>
                       <h4>
                         {serving} {porce(serving)}
                       </h4>
@@ -101,7 +101,7 @@ export default function Details(props) {
 
                   <div id="description">
                     <div name="descriptions">
-                      <h2>Postup přípravy receptu</h2>
+                      <h2>Decription of the recipe</h2>
                       <br />
                       {detail.description}
                     </div>
@@ -113,7 +113,12 @@ export default function Details(props) {
                       <br />
                       <i className="fa-solid fa-clock-rotate-left fa-xl"></i>{" "}
                       {detail.preparation}
-                      minut
+                      {""} min
+                      <br />
+                      <br />
+                      <br />
+                      <i class="fa-solid fa-user fa-xl"></i>
+                      {""} {detail.author}
                     </div>
                   </div>
 
