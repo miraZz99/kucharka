@@ -13,7 +13,7 @@ const Menu = (props) => (
       <a onClick={props.admin}>Admin</a>
     </p>
     <p>
-      <Create addRecipe={props.addRecipe} isAdmin={props.isAdmin} />
+      <Create addRecipe={props?.addRecipe} isAdmin={props?.isAdmin} />
     </p>
   </>
 );

@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Select from "react-select";
 
 const SortBooks = (props) => {
-  //   const { sortRecipe } = props;
-  //   const [selectedOption, setSelectionOption] = useState();
   let sortedBooks = props.books?.map((x) => x);
 
   const options = [
@@ -11,7 +9,7 @@ const SortBooks = (props) => {
     { value: "rating", label: "By rating (5-1)" },
     { value: "difficulty", label: "by complexity" },
   ];
-  console.log(sortedBooks);
+
   const handleChange = (newValue) => {
     if (newValue.value === "name") {
       sortedBooks.sort((a, b) => {
@@ -26,21 +24,18 @@ const SortBooks = (props) => {
         }
         return 0;
       });
-
-      //   (function(a, b){return a-b}
     } else if (newValue.value === "rating") {
-      sortedBooks.sort(function (a, b) {
-        return a.evaluated - b.evaluated;
-        // let fa = a.evaluated,
-        //   fb = b.evaluated;
+      sortedBooks.sort((a, b) => {
+        let fa = a.evaluated,
+          fb = b.evaluated;
 
-        // if (fa < fb) {
-        //   return 1;
-        // }
-        // if (fa > fb) {
-        //   return -1;
-        // }
-        // return 0;
+        if (fa < fb) {
+          return 1;
+        }
+        if (fa > fb) {
+          return -1;
+        }
+        return 0;
       });
     } else if (newValue.value === "difficulty") {
       sortedBooks.sort((a, b) => {
@@ -57,7 +52,7 @@ const SortBooks = (props) => {
       });
     }
     // console.log(sortedBooks);
-    props.onSortingBooks(sortedBooks);
+    props?.onSortingBooks(sortedBooks);
     // sortRecipe(sortedBooks);
   };
 

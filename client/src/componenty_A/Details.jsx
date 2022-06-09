@@ -21,9 +21,11 @@ export default function Details(props) {
     setIsOpen(!isOpen);
     setServing(1);
   }
+
   function plus() {
     setServing(serving + 1);
   }
+
   function minus() {
     if (serving > 1) setServing(serving - 1);
   }
@@ -104,12 +106,12 @@ export default function Details(props) {
                       {detail.description}
                     </div>
                     <div name="navic">
-                      <i class="fa-solid fa-kitchen-set fa-xl"></i>{" "}
+                      <i className="fa-solid fa-kitchen-set fa-xl"></i>{" "}
                       {detail.difficulty}
                       <br />
                       <br />
                       <br />
-                      <i class="fa-solid fa-clock-rotate-left fa-xl"></i>{" "}
+                      <i className="fa-solid fa-clock-rotate-left fa-xl"></i>{" "}
                       {detail.preparation}
                       minut
                     </div>

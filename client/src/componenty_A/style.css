@@ -132,8 +132,8 @@ h1 {
   align-items: center;
   gap: 25px;
   margin-left: 45%;
-  padding-top: 25px;
-  padding-bottom: 18px;
+
+  padding: 25px 18px;
   position: static;
   z-index: 0;
 }

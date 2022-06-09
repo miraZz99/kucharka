@@ -4,9 +4,8 @@ import axios from "axios";
 import { useEffect } from "react";
 
 const StarRating = (props) => {
-  const { _id, isOpen } = props;
+  const { _id, books } = props;
 
-  // const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
   const [end, setEnd] = useState();
 
@@ -31,7 +30,7 @@ const StarRating = (props) => {
 
   useEffect(() => {
     getStarRating();
-  }, []);
+  }, [getStarRating]);
   //
   return (
     <div>

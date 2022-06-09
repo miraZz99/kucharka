@@ -54,7 +54,7 @@ export default function ListData(props) {
               </div>
               <div id="rating">
                 {" "}
-                <StarRating _id={book._id} />{" "}
+                <StarRating _id={book._id} book={book} />{" "}
               </div>
             </div>
           );

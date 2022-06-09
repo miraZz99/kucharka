@@ -56,14 +56,10 @@ export default function CookBookList(props) {
     const newBooks = [...books];
     const foundIndex = newBooks.findIndex((x) => x._id == newUpdateRecipi._id);
     newBooks[foundIndex] = newUpdateRecipi;
-    console.log(newUpdateRecipi, newBooks);
+
     setBooks(newBooks);
   }
-  // function sortRecipe(newRecipi) {
-  //   setBooks(newRecipi);
-  //   console.log(newRecipi);
-  // }
-  console.log(books);
+
   return (
     <div className="App">
       <Navbar
