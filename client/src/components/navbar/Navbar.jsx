@@ -40,7 +40,10 @@ const Navbar = (props) => {
             <a onClick={admin}>Admin</a>
           </p>
         </div>
-        <Create addRecipe={addRecipe} isAdmin={isAdmin} />
+        <div className="create">
+          {" "}
+          <Create addRecipe={addRecipe} isAdmin={isAdmin} />
+        </div>
       </div>
 
       <div className="cookbook__navbar-popupb"></div>
