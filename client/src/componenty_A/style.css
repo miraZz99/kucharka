@@ -134,7 +134,10 @@ h1 {
   margin-left: 45%;
   padding-top: 25px;
   padding-bottom: 18px;
-  position: relative;
-
+  position: static;
+  z-index: 0;
 }
-
+  .sortBooks #selection-sort{
+    z-index: 0;
+  
+  }

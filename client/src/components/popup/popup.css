@@ -5,6 +5,7 @@
   height: 100vh;
   top: 0;
   left: 0;
+  z-index: 3;
 }
 
 
@@ -21,7 +22,7 @@
   border: 1px solid #fff;
   overflow: auto;
   outline: none;
-
+  
   
 }
  

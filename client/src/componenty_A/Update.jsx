@@ -64,137 +64,146 @@ export default function Update(props) {
       <div onClick={open}>
         <i className="fa-solid fa-pen  fa-lg"></i>{" "}
       </div>
-      {isOpen && (
-        <Popup
-          alert={alert}
-          content={
-            <>
-              <div className="Vypis">
-                <div className="zkouska">
-                  <div className="popupwin-content__recipename">
-                    <form>
-                      <p>
-                        <label htmlFor="name">Recipe name</label>
-                        <input
-                          className="input"
-                          type="text"
-                          id="name"
-                          placeholder="Zadejte jméno"
-                          name="name"
-                          value={update.name}
-                          onChange={(event) => chanche(event)}
-                        />
-                      </p>
-                    </form>
-                  </div>
-                  <div className="popupwin-content__date">
-                    <form>
-                      <p>
-                        <label htmlFor="date-input">Preparation</label>
 
-                        <input
-                          className="input"
-                          id="time-input"
-                          type="number"
-                          min="0"
-                          name="preparation"
-                          placeholder="Zadejte dobu příptavy v minutach"
-                          value={update.preparation}
-                          onChange={(event) => chanche(event)}
-                        />
-                      </p>
-                    </form>
-                  </div>
-                  <div className="recipe">
-                    <div className="popupwin-content__photo">
-                      {ingredients?.map((ingredient, index) => (
-                        <div key={index} className="neco">
-                          <p id="raw_materials">
-                            <label htmlFor="number-input">Raw_materials</label>
-                            <input
-                              id="number-input"
-                              className="input"
-                              type="text"
-                              name="raw_materials"
-                              value={ingredient.raw_materials}
-                              onChange={handleChange(ingredient, index)}
-                            />
-                          </p>
-                          <p className="widht" id="count">
-                            <label htmlFor="number-input">Count</label>
-                            <input
-                              type="number"
-                              name="count"
-                              min={0}
-                              value={ingredient.count}
-                              onChange={handleChange(ingredient, index)}
-                            />
-                          </p>
-                          <p id="unit">
-                            <label htmlFor="number-input">Unit</label>
-                            <select
-                              id="select"
-                              name="unit"
-                              value={ingredient.unit}
-                              onChange={handleChange(ingredient, index)}
-                            >
-                              <option></option>
-                              <option value="g">g</option>
-                              <option value="ks">ks</option>
-                              <option value="ml">ml</option>
-                              <option value="lžička">lžička</option>
-                            </select>
-                          </p>
-                        </div>
-                      ))}
-
-                      <form></form>
+      <div className="popupwin-content">
+        {isOpen && (
+          <Popup
+            alert={alert}
+            content={
+              <>
+                <div className="Vypis">
+                  <div className="zkouska">
+                    <div className="popupwin-content__recipename">
+                      <form>
+                        <p>
+                          <label htmlFor="name">Recipe name</label>
+                          <input
+                            className="input"
+                            type="text"
+                            id="name"
+                            placeholder="Zadejte jméno"
+                            name="name"
+                            value={update.name}
+                            onChange={(event) => chanche(event)}
+                          />
+                        </p>
+                      </form>
                     </div>
-                    <div className="popupwin-content__photo">
-                      <form></form>
+                    <div className="popupwin-content__date">
+                      <form>
+                        <p>
+                          <label htmlFor="date-input">Preparation</label>
+
+                          <input
+                            className="input"
+                            id="time-input"
+                            type="number"
+                            min="0"
+                            name="preparation"
+                            placeholder="Zadejte dobu příptavy v minutach"
+                            value={update.preparation}
+                            onChange={(event) => chanche(event)}
+                          />
+                        </p>
+                      </form>
                     </div>
-                  </div>
-                  <form>
-                    <p>Difficulty</p>
+                    <div className="recipe">
+                      <div className="popupwin-content__photo">
+                        {ingredients?.map((ingredient, index) => (
+                          <div key={index} className="neco">
+                            <p id="raw_materials">
+                              <label htmlFor="number-input">
+                                Raw_materials
+                              </label>
+                              <input
+                                id="number-input"
+                                className="input"
+                                type="text"
+                                name="raw_materials"
+                                value={ingredient.raw_materials}
+                                onChange={handleChange(ingredient, index)}
+                              />
+                            </p>
+                            <p className="widht" id="count">
+                              <label htmlFor="number-input">Count</label>
+                              <input
+                                type="number"
+                                name="count"
+                                min={0}
+                                value={ingredient.count}
+                                onChange={handleChange(ingredient, index)}
+                              />
+                            </p>
+                            <p id="unit">
+                              <label htmlFor="number-input">Unit</label>
+                              <select
+                                id="select"
+                                name="unit"
+                                value={ingredient.unit}
+                                onChange={handleChange(ingredient, index)}
+                              >
+                                <option></option>
+                                <option value="g">g</option>
+                                <option value="ks">ks</option>
+                                <option value="ml">ml</option>
+                                <option value="lžička">lžička</option>
+                              </select>
+                            </p>
+                          </div>
+                        ))}
 
-                    <select
-                      name="difficulty"
-                      value={update.difficulty}
-                      onChange={(event) => chanche(event)}
-                    >
-                      <option></option>
-                      <option value="Easy">Easy</option>
-                      <option value="Medium">Medium</option>
-                      <option value="Hard">Hard</option>
-                    </select>
-                  </form>
-                  <form>
-                    <p>Description of recipe</p>
+                        <form></form>
+                      </div>
+                      <div className="popupwin-content__photo">
+                        <form></form>
+                      </div>
+                    </div>
+                    <form>
+                      <p>Difficulty</p>
 
-                    <textarea
-                      name="description"
-                      value={update.description}
-                      onChange={(event) => chanche(event)}
-                    ></textarea>
-                  </form>
-                  <form>
-                    <p>Author</p>
+                      <select
+                        name="difficulty"
+                        value={update.difficulty}
+                        onChange={(event) => chanche(event)}
+                      >
+                        <option></option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                      </select>
+                    </form>
+                    <form>
+                      <p>Description of recipe</p>
+
+                      <textarea
+                        name="description"
+                        value={update.description}
+                        onChange={(event) => chanche(event)}
+                      ></textarea>
+                    </form>
+                    <form>
+                      <p>Author</p>
+                      <input
+                        type="text"
+                        name="author"
+                        value={update.author}
+                        onChange={(event) => chanche(event)}
+                      ></input>
+                      <Image imageChange={imageChange}></Image>
+                    </form>
                     <input
-                      type="text"
-                      name="author"
-                      value={update.author}
-                      onChange={(event) => chanche(event)}
+                      type="submit"
+                      value="Create"
+                      onClick={create}
                     ></input>
-                    <Image imageChange={imageChange}></Image>
-                  </form>
-                  <input type="submit" value="Create" onClick={create}></input>
+                  </div>
                 </div>
-              </div>
-            </>
-          }
-          handleClose={open}
-        />
-      )}
+              </>
+            }
+            handleClose={open}
+          />
+        )}
+      </div>
     </div>
   );
 }

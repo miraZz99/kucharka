@@ -47,7 +47,7 @@ export default function CookBookList(props) {
       .get(`http://localhost:8080/recipe/list`)
       .then((response) => setBooks(response.data))
       .catch((error) => console.log(error));
-  }, []);
+  }, [setBooks]);
 
   function addRecepi(newRecipi) {
     setBooks([...books, newRecipi]);
@@ -59,7 +59,11 @@ export default function CookBookList(props) {
     console.log(newUpdateRecipi, newBooks);
     setBooks(newBooks);
   }
-
+  // function sortRecipe(newRecipi) {
+  //   setBooks(newRecipi);
+  //   console.log(newRecipi);
+  // }
+  console.log(books);
   return (
     <div className="App">
       <Navbar
@@ -72,7 +76,9 @@ export default function CookBookList(props) {
       ></Navbar>
       <SortBooks
         books={books}
+        // onSortingBooks={setBooks}
         onSortingBooks={(sortedBooks) => setBooks(sortedBooks)}
+        // sortRecipe={sortRecipe}
       ></SortBooks>
       {result && (
         <ListData
