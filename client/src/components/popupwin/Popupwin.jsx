@@ -96,7 +96,7 @@ const Popupwin = (props) => {
                             className="input"
                             type="text"
                             id="name"
-                            placeholder="Zadejte jméno"
+                            placeholder="Enter name of the recipe"
                             name="name"
                             value={props.name}
                             onChange={props.napln}
@@ -116,7 +116,7 @@ const Popupwin = (props) => {
                             type="number"
                             min="0"
                             name="preparation"
-                            placeholder="Zadejte dobu příptavy v minutach"
+                            placeholder="Enter time of preparation in minutes"
                             value={props.preparation}
                             onChange={props.napln}
                           />
@@ -136,7 +136,7 @@ const Popupwin = (props) => {
                                 id="number-input"
                                 className="input"
                                 type="text"
-                                placeholder="Zadejte ingredience"
+                                placeholder="Enter ingredients"
                                 name="raw_materials"
                                 value={ingredients.raw_materials}
                                 onChange={handleChange(ingredient, index)}
@@ -207,7 +207,7 @@ const Popupwin = (props) => {
                       <textarea
                         required
                         name="description"
-                        placeholder="Popis Receptu"
+                        placeholder="Enter description of the recipe"
                         value={props.description}
                         onChange={props.napln}
                       ></textarea>
@@ -218,7 +218,7 @@ const Popupwin = (props) => {
                         required
                         type="text"
                         name="author"
-                        placeholder="Autor receptu"
+                        placeholder="Enter your name"
                         value={props.author}
                         onChange={props.napln}
                       ></input>
@@ -232,7 +232,16 @@ const Popupwin = (props) => {
                   </div>
 
                   <div className="alert">
-                    {alert && <Alert> Recept byl vytvořen </Alert>}
+                    {alert && (
+                      <Alert
+                        onClose={() => {
+                          setAlert(false);
+                        }}
+                      >
+                        {" "}
+                        Recept byl vytvořen{" "}
+                      </Alert>
+                    )}
                   </div>
                 </div>
               </>
