@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ListData from "./ListData";
 import Image from "./Image";
+import SortBooks from "./SortBooks";
 
 import Navbar from "../components/navbar/Navbar";
 
@@ -69,7 +70,10 @@ export default function CookBookList(props) {
         name={find.name}
         addRecipe={addRecepi}
       ></Navbar>
-
+      <SortBooks
+        books={books}
+        onSortingBooks={(sortedBooks) => setBooks(sortedBooks)}
+      ></SortBooks>
       {result && (
         <ListData
           updateRecepi={updateRecepi}

@@ -125,3 +125,16 @@ h1 {
   height: 100%;
 
 }
+
+.sortBooks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
+  margin-left: 45%;
+  padding-top: 25px;
+  padding-bottom: 18px;
+  position: relative;
+
+}
+
