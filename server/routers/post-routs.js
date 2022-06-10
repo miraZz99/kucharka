@@ -29,6 +29,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 //#endregion
+//---------------------------------------------------------------------------
 
 //#region [CREATE]
 router.post("/recipe/create", cors(), upload.single("image"), (req, res) => {
@@ -39,7 +40,7 @@ router.post("/recipe/create", cors(), upload.single("image"), (req, res) => {
     preparation: req.body.preparation,
     difficulty: req.body.difficulty,
     author: req.body.author,
-    image: req.file.filename,
+    image: req?.file?.filename,
   };
 
   const { error } = valid.validateRecipe(array);
