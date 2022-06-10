@@ -1,3 +1,4 @@
+//#region [CONST]
 const express = require("express");
 const valid = require("../validace/validace");
 const db = require("../databaze/databaze");
@@ -7,14 +8,18 @@ const multer = require("multer");
 
 let path = require("path");
 const cors = require("cors");
+//#endregion
 
+//#region [CORS]
 require("dotenv/config");
 router.use(
   cors({
     origin: "http://localhost:3000",
   })
 );
+//#endregion
 
+//#region [STORAGE]
 const storage = multer.diskStorage({
   destination: "./server/uploads",
   filename: function (req, file, cb) {
@@ -23,7 +28,9 @@ const storage = multer.diskStorage({
   },
 });
 const upload = multer({ storage: storage });
+//#endregion
 
+//#region [CREATE]
 router.post("/recipe/create", cors(), upload.single("image"), (req, res) => {
   let array = {
     name: req.body.name,
@@ -45,15 +52,21 @@ router.post("/recipe/create", cors(), upload.single("image"), (req, res) => {
       .catch((err) => console.log(err));
   }
 });
+//#endregion
+//---------------------------------------------------------------------------
+//#region [FIND]
+
 router.post("/recipe/find", cors(), (req, res) => {
+  let name = req.body.name;
   try {
-    db.Recipe.find({ name: RegExp(req.body.name) }).then((result) =>
-      res.send(result)
-    );
+    db.Recipe.find({ name: RegExp(name) }).then((result) => res.send(result));
   } catch (error) {
     res.status(404).send("Bad request" + error);
   }
 });
+//#endregion
+//---------------------------------------------------------------------------
+//#region [DELETE]
 router.post("/recipe/delete", cors(), (req, res) => {
   let idRecipe = req.body;
   try {
@@ -65,7 +78,9 @@ router.post("/recipe/delete", cors(), (req, res) => {
     res.status(404).send("Bad request" + error);
   }
 });
-
+//#endregion
+//---------------------------------------------------------------------------
+//#region [RATING]
 router.post("/rating", cors(), (req, res) => {
   let array = {
     _id: req.body._id,
@@ -74,7 +89,6 @@ router.post("/rating", cors(), (req, res) => {
   let avg = {
     evaluated: 0,
   };
-
   db.Recipe.findById(array._id).then((response) => {
     avg.evaluated = Math.round(response.evaluated + array.evaluated) / 2;
 
@@ -88,6 +102,9 @@ router.post("/rating", cors(), (req, res) => {
       });
   });
 });
+//#endregion
+//---------------------------------------------------------------------------
+//#region [UPDATE]
 router.post(
   "/recipe/update",
   cors(),
@@ -120,5 +137,6 @@ router.post(
     }
   }
 );
+//#endregion
 
 module.exports = router;

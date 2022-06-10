@@ -7,7 +7,7 @@ import "./navbar.css";
 const Menu = (props) => (
   <>
     <p>
-      <a href="#home">Home</a>
+      <a href="/recipes">Recipes</a>
     </p>
     <p>
       <a onClick={props.admin}>Admin</a>
@@ -34,7 +34,7 @@ const Navbar = (props) => {
         </div>
         <div className="cookbook__navbar-links_container">
           <p>
-            <a href="home">Recipes</a>
+            <a href="/recipes">Recipes</a>
           </p>
           <p id="admin">
             <a onClick={admin}>Admin</a>
